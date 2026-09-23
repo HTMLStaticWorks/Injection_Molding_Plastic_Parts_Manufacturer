@@ -107,8 +107,10 @@
         </section>
 
         <section class="py-16 max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12">
-            <!-- Form -->
-            <div class="bg-white dark:bg-industrial-900 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-800">
+            <!-- Form and Map Column -->
+            <div class="flex flex-col gap-8">
+                <!-- Form -->
+                <div class="bg-white dark:bg-industrial-900 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-800">
                 <h2 class="text-2xl font-bold mb-6">Project Specifications</h2>
                 <form action="#" method="POST" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -169,16 +171,23 @@
 
                     <button type="submit" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold py-3 rounded transition-colors">Submit Request for Quote</button>
                 </form>
+                </div>
+                
+                <!-- Map -->
+                <div class="bg-gray-200 dark:bg-gray-800 h-64 rounded-lg overflow-hidden">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11531.06649870198!2d-83.057396!3d42.331429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824ca0110cb1d75%3A0x5776864e35b9c4d2!2sDetroit%2C%20MI!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
             </div>
 
             <!-- Info -->
             <div class="space-y-8">
-                <div>
+                <div class="flex flex-col items-center lg:items-start text-center lg:text-left">
                     <h3 class="text-2xl font-bold mb-4">Direct Contact</h3>
-                    <div class="space-y-4 mb-8">
-                        <p class="flex items-center gap-3"><i class="fas fa-phone text-accent-500 w-5"></i> <a href="tel:18005557527">+1 (800) 555-PLAS (7527)</a></p>
-                        <p class="flex items-center gap-3"><i class="fas fa-envelope text-accent-500 w-5"></i> quotes@nexusplastics.com</p>
-                        <p class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-accent-500 w-5 mt-1"></i> 1500 Engineering Blvd<br>Manufacturing District<br>Detroit, MI 48201</p>
+                    <div class="space-y-4 mb-8 w-fit text-left">
+                        <p class="flex items-center gap-3"><i class="fas fa-phone text-accent-500 w-5 text-center"></i> <a href="tel:18005557527">+1 (800) 555-PLAS (7527)</a></p>
+                        <p class="flex items-center gap-3"><i class="fas fa-envelope text-accent-500 w-5 text-center"></i> quotes@nexusplastics.com</p>
+                        <p class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-accent-500 w-5 mt-1 text-center"></i> <span>1500 Engineering Blvd<br>Manufacturing District<br>Detroit, MI 48201</span></p>
+                        <p class="flex items-start gap-3"><i class="fas fa-clock text-accent-500 w-5 mt-1 text-center"></i> Mon-Fri: 7:00 AM - 6:00 PM</p>
                     </div>
                     <h4 class="text-lg font-bold mb-3">Connect With Us</h4>
                     <div class="flex gap-4">
@@ -188,9 +197,6 @@
                     </div>
                 </div>
 
-                <div class="bg-gray-200 dark:bg-gray-800 h-64 rounded-lg overflow-hidden">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11531.06649870198!2d-83.057396!3d42.331429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824ca0110cb1d75%3A0x5776864e35b9c4d2!2sDetroit%2C%20MI!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
             </div>
         </section>
     </main>
