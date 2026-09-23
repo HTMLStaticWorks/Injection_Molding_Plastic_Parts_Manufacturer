@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing Capabilities | Nexus Plastics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        industrial: {
+                            50: '#f5f7fa', 100: '#e4e8f0', 200: '#cbd4e1', 300: '#a3b5c9',
+                            400: '#7590aa', 500: '#55728f', 600: '#435a74', 700: '#36495f',
+                            800: '#2f3f51', 900: '#2a3545', 950: '#1c2431',
+                        },
+                        accent: {
+                            400: '#f97316', 500: '#ea580c', 600: '#c2410c',
+                        }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .glass-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .dark .glass-header {
+            background: rgba(28, 36, 49, 0.95);
+        }
+
+        [dir="rtl"] {
+            text-align: right;
+        }
+
+        [dir="rtl"] .ltr-icon {
+            transform: scaleX(-1);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-industrial-50 text-industrial-900 dark:bg-industrial-950 dark:text-industrial-50 transition-colors duration-300 antialiased flex flex-col min-h-screen">
+
+    <!-- Header -->
+    <header id="main-header"
+        class="fixed w-full top-0 z-50 transition-all duration-300 bg-white dark:bg-industrial-950 border-b border-gray-200 dark:border-industrial-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center gap-2">
+                        <div
+                            class="w-8 h-8 bg-accent-500 rounded flex items-center justify-center text-white font-bold text-xl">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <span class="font-bold text-xl tracking-tight text-industrial-900 dark:text-white">Nexus<span
+                                class="text-accent-500">Plastics</span></span>
+                    </a>
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex space-x-8 rtl:space-x-reverse">
+                    <a href="index.html"
+                        class="text-industrial-600 hover:text-accent-500 dark:text-industrial-300 dark:hover:text-accent-400 font-medium transition-colors">Home
+                        1</a>
+                    <a href="home-2.html"
+                        class="text-industrial-600 hover:text-accent-500 dark:text-industrial-300 dark:hover:text-accent-400 font-medium transition-colors">Home
+                        2</a>
+                    <a href="about.html"
+                        class="text-industrial-600 hover:text-accent-500 dark:text-industrial-300 dark:hover:text-accent-400 font-medium transition-colors">About</a>
+                    <a href="capabilities.html" class="text-accent-500 font-medium transition-colors">Capabilities</a>
+                    <a href="blog.html"
+                        class="text-industrial-600 hover:text-accent-500 dark:text-industrial-300 dark:hover:text-accent-400 font-medium transition-colors">Blog</a>
+                    <a href="contact.html"
+                        class="text-industrial-600 hover:text-accent-500 dark:text-industrial-300 dark:hover:text-accent-400 font-medium transition-colors">Contact</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
+                    <button id="theme-toggle"
+                        class="text-industrial-500 hover:text-accent-500 dark:text-industrial-400 dark:hover:text-accent-400 transition-colors w-10 h-10 rounded shadow-sm border border-gray-100 dark:border-industrial-700 flex items-center justify-center bg-white dark:bg-industrial-800">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <button id="rtl-toggle"
+                        class="text-industrial-500 hover:text-accent-500 dark:text-industrial-400 dark:hover:text-accent-400 transition-colors w-10 h-10 rounded shadow-sm border border-gray-100 dark:border-industrial-700 flex items-center justify-center bg-white dark:bg-industrial-800 font-bold text-xs">
+                        RTL
+                    </button>
+                    <a href="login.html"
+                        class="bg-accent-500 hover:bg-accent-600 text-white px-5 py-2 rounded font-medium transition-colors shadow-lg shadow-accent-500/30">Sign
+                        Up</a>
+
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button id="mobile-theme-toggle" class="text-industrial-500 dark:text-industrial-400">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:block"></i>
+                    </button>
+                    <button id="mobile-menu-btn"
+                        class="text-industrial-600 dark:text-industrial-300 hover:text-accent-500 focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 z-[60] bg-white dark:bg-industrial-950 transform translate-x-full transition-transform duration-300 lg:hidden overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <div class="flex items-center gap-2">
+                    <div
+                        class="w-8 h-8 bg-accent-500 rounded flex items-center justify-center text-white font-bold text-xl">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <span class="font-bold text-xl tracking-tight text-industrial-900 dark:text-white">Nexus<span
+                            class="text-accent-500">Plastics</span></span>
+                </div>
+                <button id="mobile-menu-close" class="text-industrial-500 hover:text-accent-500 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html"
+                    class="text-xl font-medium text-industrial-800 dark:text-industrial-200 border-b border-gray-100 dark:border-industrial-800 pb-2">Home
+                    1</a>
+                <a href="home-2.html"
+                    class="text-xl font-medium text-industrial-800 dark:text-industrial-200 border-b border-gray-100 dark:border-industrial-800 pb-2">Home
+                    2</a>
+                <a href="about.html"
+                    class="text-xl font-medium text-industrial-800 dark:text-industrial-200 border-b border-gray-100 dark:border-industrial-800 pb-2">About</a>
+                <a href="capabilities.html"
+                    class="text-xl font-medium text-accent-500 border-b border-gray-100 dark:border-industrial-800 pb-2">Capabilities</a>
+                <a href="blog.html"
+                    class="text-xl font-medium text-industrial-800 dark:text-industrial-200 border-b border-gray-100 dark:border-industrial-800 pb-2">Blog</a>
+                <a href="contact.html"
+                    class="text-xl font-medium text-industrial-800 dark:text-industrial-200 border-b border-gray-100 dark:border-industrial-800 pb-2">Contact</a>
+                <a href="login.html"
+                    class="bg-accent-500 text-white text-center px-5 py-3 rounded font-medium shadow-lg shadow-accent-500/30">Sign
+                    Up</a>
+            </nav>
+            <div class="mt-8 flex flex-col gap-4">
+
+                <button id="mobile-rtl-toggle"
+                    class="bg-industrial-100 dark:bg-industrial-800 text-industrial-800 dark:text-industrial-200 text-center px-5 py-3 rounded font-medium">Toggle
+                    RTL</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="flex-grow pt-20">
+        <!-- Hero Section -->
+        <section class="relative bg-industrial-950 py-24 lg:py-32 overflow-hidden border-b border-industrial-800">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.pexels.com/photos/5994863/pexels-photo-5994863.jpeg"
+                    alt="Precision Manufacturing" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
+                <div class="absolute inset-0 bg-gradient-to-t from-industrial-950 via-industrial-950/80 to-transparent">
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Comprehensive <br /><span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-accent-600">Manufacturing
+                        Capabilities</span></h1>
+                <p class="text-industrial-300 text-xl max-w-3xl mx-auto mb-10">From initial concept and tool design to
+                    high-volume injection molding and secondary assembly. We bring precision to every stage.</p>
+            </div>
+        </section>
+
+        <!-- Capabilities Grid -->
+        <section class="py-24 bg-industrial-50 dark:bg-industrial-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div class="grid lg:grid-cols-2 gap-16 mb-20 items-center">
+                    <div>
+                        <div class="w-14 h-14 bg-accent-500/10 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-industry text-3xl text-accent-500"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-industrial-900 dark:text-white mb-6">Precision Injection
+                            Molding</h2>
+                        <p class="text-industrial-600 dark:text-industrial-300 mb-6 leading-relaxed">
+                            Our core expertise lies in high-precision, tight-tolerance injection molding. We utilize
+                            state-of-the-art electric and hybrid presses ranging from 50 to 1,500 tons, capable of
+                            producing components weighing from less than a gram to over 10 pounds.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-industrial-700 dark:text-industrial-300"><i
+                                    class="fas fa-check-circle text-accent-500"></i> High-volume automated production
+                            </li>
+                            <li class="flex items-center gap-3 text-industrial-700 dark:text-industrial-300"><i
+                                    class="fas fa-check-circle text-accent-500"></i> Overmolding and Insert Molding</li>
+                            <li class="flex items-center gap-3 text-industrial-700 dark:text-industrial-300"><i
+                                    class="fas fa-check-circle text-accent-500"></i> Two-Shot (2K) Multi-Material
+                                Molding</li>
+                        </ul>
+                    </div>
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-accent-500/20 rounded-xl blur-xl group-hover:bg-accent-500/30 transition-all duration-500">
+                        </div>
+                        <img src="https://images.pexels.com/photos/4226906/pexels-photo-4226906.jpeg"
+                            alt="Injection Molding"
+                            class="relative rounded-xl shadow-2xl object-cover h-[400px] w-full">
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16 mb-20 items-center flex-col-reverse lg:flex-row-reverse">
+                    <div>
+                        <div class="w-14 h-14 bg-accent-500/10 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-tools text-3xl text-accent-500"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-industrial-900 dark:text-white mb-6">In-House Tooling & Mold
+                            Making</h2>
+                        <p class="text-industrial-600 dark:text-industrial-300 mb-6 leading-relaxed">
+                            A great part starts with a great mold. Our fully equipped in-house tool room allows us to
+                            design, fabricate, maintain, and repair complex steel and aluminum molds, ensuring maximum
+                            uptime and component quality.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-industrial-700 dark:text-industrial-300"><i
+                                    class="fas fa-check-circle text-accent-500"></i> Class 101 Production Tooling</li>
+                            <li class="flex items-center gap-3 text-industrial-700 dark:text-industrial-300"><i
+                                    class="fas fa-check-circle text-accent-500"></i> CNC Machining & Wire EDM</li>
+                            <li class="flex items-center gap-3 text-industrial-700 dark:text-industrial-300"><i
+                                    class="fas fa-check-circle text-accent-500"></i> Preventative Mold Maintenance</li>
+                        </ul>
+                    </div>
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-industrial-500/20 rounded-xl blur-xl group-hover:bg-industrial-500/30 transition-all duration-500">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&q=80&w=800"
+                            alt="CNC Machining" class="relative rounded-xl shadow-2xl object-cover h-[400px] w-full">
+                    </div>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <div class="w-14 h-14 bg-accent-500/10 rounded-lg flex items-center justify-center mb-6">
+                            <i class="fas fa-microscope text-3xl text-accent-500"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-industrial-900 dark:text-white mb-6">Quality Assurance &
+                            Metrology</h2>
+                        <p class="text-industrial-600 dark:text-industrial-300 mb-6 leading-relaxed">
+                            We operate under a strict ISO 13485 certified quality management system. Our
+                            climate-controlled metrology lab is equipped with advanced CMMs, vision systems, and
+                            spectroscopy equipment to guarantee your parts meet every specification.
+                        </p>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-industrial-700 dark:text-industrial-300"><i
+                                    class="fas fa-check-circle text-accent-500"></i> First Article Inspection (FAI)</li>
+                            <li class="flex items-center gap-3 text-industrial-700 dark:text-industrial-300"><i
+                                    class="fas fa-check-circle text-accent-500"></i> Statistical Process Control (SPC)
+                            </li>
+                            <li class="flex items-center gap-3 text-industrial-700 dark:text-industrial-300"><i
+                                    class="fas fa-check-circle text-accent-500"></i> Full Material Traceability</li>
+                        </ul>
+                    </div>
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-accent-500/20 rounded-xl blur-xl group-hover:bg-accent-500/30 transition-all duration-500">
+                        </div>
+                        <img src="https://images.pexels.com/photos/8442027/pexels-photo-8442027.jpeg"
+                            alt="Quality Inspection"
+                            class="relative rounded-xl shadow-2xl object-cover h-[400px] w-full">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="bg-industrial-900 py-20 relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=1920')] bg-cover bg-center opacity-10">
+            </div>
+            <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Ready to discuss your next manufacturing
+                    project?</h2>
+                <p class="text-industrial-300 text-lg mb-8">Our engineering team is ready to review your CAD files and
+                    provide a detailed DFM analysis and quote.</p>
+                <a href="contact.html"
+                    class="inline-block bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 px-10 rounded shadow-lg shadow-accent-500/40 transition-transform transform hover:-translate-y-1">Request
+                    a Quote</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer
+        class="bg-industrial-100 dark:bg-industrial-950 text-industrial-600 dark:text-industrial-400 py-12 border-t border-gray-200 dark:border-industrial-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div class="flex flex-col justify-between h-full">
+                    <div class="flex items-center gap-2 mb-6">
+                        <div
+                            class="w-8 h-8 bg-accent-500 rounded flex items-center justify-center text-white font-bold text-xl">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <span class="font-bold text-xl tracking-tight text-industrial-900 dark:text-white">Nexus<span
+                                class="text-accent-500">Plastics</span></span>
+                    </div>
+                    <p class="mb-6 text-sm">Premium precision injection molding and custom plastic parts manufacturing
+                        for critical industrial applications worldwide.</p>
+                    <div class="flex space-x-4 rtl:space-x-reverse">
+                        <a href="#"
+                            class="text-industrial-500 hover:text-industrial-900 dark:text-industrial-400 dark:hover:text-white transition-colors"><i
+                                class="fab fa-linkedin text-xl"></i></a>
+                        <a href="#"
+                            class="text-industrial-500 hover:text-industrial-900 dark:text-industrial-400 dark:hover:text-white transition-colors"><i
+                                class="fab fa-x-twitter text-xl"></i></a>
+                        <a href="#"
+                            class="text-industrial-500 hover:text-industrial-900 dark:text-industrial-400 dark:hover:text-white transition-colors"><i
+                                class="fab fa-youtube text-xl"></i></a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col justify-between h-full">
+                    <h4 class="text-industrial-900 dark:text-white font-bold mb-6 uppercase text-sm tracking-wider">
+                        Capabilities</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-accent-500 transition-colors">Injection Molding</a></li>
+                        <li><a href="#" class="hover:text-accent-500 transition-colors">Mold Engineering</a></li>
+                        <li><a href="#" class="hover:text-accent-500 transition-colors">Insert Molding</a></li>
+                        <li><a href="#" class="hover:text-accent-500 transition-colors">Assembly Services</a></li>
+                        <li><a href="#" class="hover:text-accent-500 transition-colors">Prototyping</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col justify-between h-full">
+                    <h4 class="text-industrial-900 dark:text-white font-bold mb-6 uppercase text-sm tracking-wider">
+                        Industries</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-accent-500 transition-colors">Automotive Components</a></li>
+                        <li><a href="#" class="hover:text-accent-500 transition-colors">Medical Devices</a></li>
+                        <li><a href="#" class="hover:text-accent-500 transition-colors">Consumer Electronics</a></li>
+                        <li><a href="#" class="hover:text-accent-500 transition-colors">Industrial Equipment</a></li>
+                        <li><a href="#" class="hover:text-accent-500 transition-colors">Aerospace</a></li>
+                    </ul>
+                </div>
+
+                <div class="flex flex-col justify-between h-full">
+                    <h4 class="text-industrial-900 dark:text-white font-bold mb-6 uppercase text-sm tracking-wider">
+                        Contact</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-accent-500"></i>
+                            <span>1500 Engineering Blvd<br>Manufacturing District<br>Detroit, MI 48201</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-accent-500"></i>
+                            <span>+1 (800) 555-PLAS</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-accent-500"></i>
+                            <span>quotes@nexusplastics.com</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-clock text-accent-500"></i>
+                            <span>Mon-Fri: 7:00 AM - 6:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-200 dark:border-industrial-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
+                <p>&copy; 2026 Nexus Plastics Manufacturing. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0 rtl:space-x-reverse">
+                    <a href="#" class="hover:text-industrial-900 dark:hover:text-white transition-colors">Privacy
+                        Policy</a>
+                    <a href="#" class="hover:text-industrial-900 dark:hover:text-white transition-colors">Terms of
+                        Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <a href="#" id="scroll-top-btn"
+        class="fixed bottom-6 right-6 rtl:right-auto rtl:left-6 bg-accent-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 pointer-events-none transition-all duration-300 z-50 hover:bg-accent-600 hover:-translate-y-1">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,2 +1,0 @@
-# Injection_Molding_Plastic_Parts_Manufacturer
-Automated website repository for Injection_Molding_Plastic_Parts_Manufacturer
