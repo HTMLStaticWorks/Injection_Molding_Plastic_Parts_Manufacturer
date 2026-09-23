@@ -81,10 +81,6 @@
 
                 <!-- Mobile menu button -->
                 <div class="lg:hidden flex items-center gap-4">
-                    <button id="mobile-theme-toggle" class="text-industrial-500 dark:text-industrial-400">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:block"></i>
-                    </button>
                     <button id="mobile-menu-btn"
                         class="text-industrial-600 dark:text-industrial-300 hover:text-accent-500 focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
@@ -131,7 +127,13 @@
                     Up</a>
             </nav>
             <div class="mt-8 flex flex-col gap-4">
-
+                <button id="mobile-theme-toggle"
+                    class="bg-industrial-100 dark:bg-industrial-800 text-industrial-800 dark:text-industrial-200 text-center px-5 py-3 rounded font-medium flex items-center justify-center gap-2">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                    <span class="dark:hidden">Dark Mode</span>
+                    <span class="hidden dark:block">Light Mode</span>
+                </button>
                 <button id="mobile-rtl-toggle"
                     class="bg-industrial-100 dark:bg-industrial-800 text-industrial-800 dark:text-industrial-200 text-center px-5 py-3 rounded font-medium">Toggle
                     RTL</button>

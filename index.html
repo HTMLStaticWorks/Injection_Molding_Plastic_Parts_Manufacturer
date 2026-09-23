@@ -114,10 +114,6 @@
 
                 <!-- Mobile menu button -->
                 <div class="lg:hidden flex items-center gap-4">
-                    <button id="mobile-theme-toggle" class="text-industrial-500 dark:text-industrial-400">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:block"></i>
-                    </button>
                     <button id="mobile-menu-btn"
                         class="text-industrial-600 dark:text-industrial-300 hover:text-accent-500 focus:outline-none">
                         <i class="fas fa-bars text-2xl"></i>
@@ -164,7 +160,13 @@
                     Up</a>
             </nav>
             <div class="mt-8 flex flex-col gap-4">
-
+                <button id="mobile-theme-toggle"
+                    class="bg-industrial-100 dark:bg-industrial-800 text-industrial-800 dark:text-industrial-200 text-center px-5 py-3 rounded font-medium flex items-center justify-center gap-2">
+                    <i class="fas fa-moon dark:hidden"></i>
+                    <i class="fas fa-sun hidden dark:block"></i>
+                    <span class="dark:hidden">Dark Mode</span>
+                    <span class="hidden dark:block">Light Mode</span>
+                </button>
                 <button id="mobile-rtl-toggle"
                     class="bg-industrial-100 dark:bg-industrial-800 text-industrial-800 dark:text-industrial-200 text-center px-5 py-3 rounded font-medium">Toggle
                     RTL</button>
@@ -178,7 +180,7 @@
             <img src="https://images.pexels.com/photos/33977785/pexels-photo-33977785.jpeg"
                 alt="Injection Molding Factory" class="absolute inset-0 w-full h-full object-cover opacity-60">
             <div class="absolute inset-0 hero-overlay"></div>
-            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-16 md:pb-0">
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pb-24 md:pb-0">
                 <div class="max-w-3xl">
                     <div
                         class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-industrial-800/80 border border-industrial-700 text-accent-400 text-sm font-medium mb-6">
@@ -208,7 +210,7 @@
 
         <!-- Stats Section -->
         <section
-            class="bg-white dark:bg-industrial-900 border-b border-gray-100 dark:border-industrial-800 py-10 relative z-10 -mt-10 mx-4 md:mx-auto max-w-6xl rounded-lg shadow-xl">
+            class="bg-white dark:bg-industrial-900 border-b border-gray-100 dark:border-industrial-800 py-10 relative z-10 mt-8 md:-mt-10 mx-4 md:mx-auto max-w-6xl rounded-lg shadow-xl">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 px-6 md:px-12">
                 <div class="text-center">
                     <p class="text-3xl md:text-4xl font-bold text-accent-500 mb-1">50M+</p>
