@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="scroll-smooth">
+<html lang="en" dir="ltr" class="scroll-smooth overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,19 +11,31 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+            width: 100%;
+            position: relative;
+        }
+        [dir="rtl"] { text-align: right; }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900 dark:bg-industrial-950 dark:text-white antialiased min-h-screen flex items-center justify-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative">
-    
-    <div class="absolute top-4 right-4 sm:top-6 sm:right-6 rtl:left-4 sm:rtl:left-6 rtl:right-auto flex gap-4">
-        <button id="theme-toggle" class="w-10 h-10 rounded bg-white dark:bg-industrial-900 shadow text-gray-500 flex items-center justify-center">
+<body class="bg-gray-50 text-gray-900 dark:bg-industrial-950 dark:text-white antialiased min-h-screen flex items-center justify-center pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-x-hidden w-full max-w-full">
+    <!-- Subtle Industrial Background -->
+    <div class="fixed inset-0 bg-[url('images/hero_robot_molding_press.jpg')] bg-cover bg-center opacity-10 dark:opacity-15 pointer-events-none"></div>
+    <div class="fixed inset-0 bg-gradient-to-t from-gray-50 via-transparent to-transparent dark:from-industrial-950 pointer-events-none"></div>
+
+    <div class="absolute top-4 right-4 sm:top-6 sm:right-6 rtl:left-4 sm:rtl:left-6 rtl:right-auto flex gap-4 z-20">
+        <button id="theme-toggle" class="w-10 h-10 rounded-lg bg-white dark:bg-industrial-900 shadow border border-gray-200 dark:border-industrial-700 text-gray-500 hover:text-accent-500 flex items-center justify-center transition-colors">
             <i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:block"></i>
         </button>
-        <button id="rtl-toggle" class="w-10 h-10 rounded bg-white dark:bg-industrial-900 shadow text-gray-500 font-bold text-xs flex items-center justify-center">
+        <button id="rtl-toggle" class="w-10 h-10 rounded-lg bg-white dark:bg-industrial-900 shadow border border-gray-200 dark:border-industrial-700 text-gray-500 hover:text-accent-500 font-bold text-xs flex items-center justify-center transition-colors">
             RTL
         </button>
     </div>
 
-    <div class="max-w-md w-full space-y-8 bg-white dark:bg-industrial-900 p-8 rounded-xl shadow-2xl border border-gray-100 dark:border-gray-800">
+    <div class="max-w-md w-full space-y-8 bg-white dark:bg-industrial-900 p-8 rounded-2xl shadow-2xl border border-gray-100 dark:border-industrial-800 relative z-10">
         <div class="text-center">
             <a href="index.html" class="inline-flex items-center gap-2 font-bold text-2xl justify-center mb-6">
                 <div class="w-10 h-10 bg-accent-500 rounded flex items-center justify-center text-white"><i class="fas fa-cube"></i></div>

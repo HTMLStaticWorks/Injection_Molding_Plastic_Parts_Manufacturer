@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="scroll-smooth">
+<html lang="en" dir="ltr" class="scroll-smooth overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,8 +11,20 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+            width: 100%;
+            position: relative;
+        }
+        .glass-header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
+        .dark .glass-header { background: rgba(28, 36, 49, 0.95); }
+        [dir="rtl"] { text-align: right; }
+        [dir="rtl"] .ltr-icon { transform: scaleX(-1); }
+    </style>
 </head>
-<body class="bg-industrial-50 text-industrial-900 dark:bg-industrial-950 dark:text-industrial-50 antialiased flex flex-col min-h-screen">
+<body class="bg-industrial-50 text-industrial-900 dark:bg-industrial-950 dark:text-industrial-50 antialiased flex flex-col min-h-screen overflow-x-hidden w-full max-w-full">
     
     <!-- Header -->
     <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white dark:bg-industrial-950 border-b border-gray-200 dark:border-industrial-800">
@@ -51,9 +63,13 @@
 
                 </div>
 
-                <!-- Mobile menu button -->
-                <div class="lg:hidden flex items-center gap-4">
-                    <button id="mobile-menu-btn" class="text-industrial-600 dark:text-industrial-300 hover:text-accent-500 focus:outline-none">
+                <!-- Mobile menu and theme toggle buttons -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <button class="theme-toggle-btn text-industrial-500 hover:text-accent-500 dark:text-industrial-400 dark:hover:text-accent-400 transition-colors w-9 h-9 rounded shadow-sm border border-gray-200 dark:border-industrial-700 flex items-center justify-center bg-white dark:bg-industrial-800" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon dark:hidden text-sm"></i>
+                        <i class="fas fa-sun hidden dark:block text-sm"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-industrial-600 dark:text-industrial-300 hover:text-accent-500 focus:outline-none p-1.5" aria-label="Open Navigation Menu">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -62,7 +78,7 @@
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white dark:bg-industrial-950 transform translate-x-full transition-transform duration-300 lg:hidden overflow-y-auto">
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white dark:bg-industrial-950 transform translate-x-full transition-transform duration-300 lg:hidden overflow-y-auto invisible pointer-events-none">
         <div class="p-6">
             <div class="flex justify-between items-center mb-8">
                 <div class="flex items-center gap-2">
@@ -97,106 +113,265 @@
         </div>
     </div>
 
-    <main class="flex-grow pt-20">
-        <section class="bg-industrial-900 py-20 text-center text-white relative overflow-hidden">
-            <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=1920')] bg-cover bg-center opacity-20"></div>
+    <main class="flex-grow pt-20 overflow-x-hidden w-full max-w-full">
+        <!-- Header -->
+        <section class="bg-industrial-950 py-20 text-center text-white relative overflow-hidden border-b border-industrial-800">
+            <div class="absolute inset-0 bg-[url('images/hero_robot_molding_press.jpg')] bg-cover bg-center opacity-25 mix-blend-luminosity"></div>
             <div class="max-w-7xl mx-auto px-4 relative z-10">
-                <h1 class="text-4xl font-bold mb-4">Request a Manufacturing Quote</h1>
-                <p class="text-industrial-300">Submit your project details for a rapid DFM review and pricing estimate.</p>
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-accent-500/20 text-accent-400 mb-4 uppercase tracking-wider">
+                    <i class="fas fa-file-signature"></i> Instant DFM & Tooling Pricing
+                </span>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Request a Manufacturing & Tooling Quote</h1>
+                <p class="text-industrial-300 text-base md:text-lg max-w-2xl mx-auto">Upload your 3D CAD files for an automated moldability review, gate placement simulation, and comprehensive production quotation within 24 hours.</p>
             </div>
         </section>
 
-        <section class="py-16 max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12">
-            <!-- Form and Map Column -->
-            <div class="flex flex-col gap-8">
-                <!-- Form -->
-                <div class="bg-white dark:bg-industrial-900 p-8 rounded-lg shadow-lg border border-gray-200 dark:border-gray-800">
-                <h2 class="text-2xl font-bold mb-6">Project Specifications</h2>
-                <form action="#" method="POST" class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Full Name *</label>
-                            <input type="text" required class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded px-3 py-2">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Company Name *</label>
-                            <input type="text" required class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded px-3 py-2">
-                        </div>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Business Email *</label>
-                            <input type="email" required class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded px-3 py-2">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Phone *</label>
-                            <input type="tel" required class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded px-3 py-2">
-                        </div>
-                    </div>
-                    
-                    <div class="border-t border-gray-200 dark:border-gray-700 pt-6">
-                        <label class="block text-sm font-medium mb-1">Material Preference</label>
-                        <select class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded px-3 py-2">
-                            <option>Undecided / Need Recommendation</option>
-                            <option>ABS</option>
-                            <option>Polycarbonate (PC)</option>
-                            <option>Nylon (PA)</option>
-                            <option>Acetal (POM)</option>
-                        </select>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Est. Annual Volume *</label>
-                            <input type="number" required placeholder="e.g. 50000" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded px-3 py-2">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium mb-1">Required Tolerance</label>
-                            <select class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded px-3 py-2">
-                                <option>Commercial (±0.005")</option>
-                                <option>Precision (±0.002")</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Project Description & Requirements *</label>
-                        <textarea required rows="4" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded px-3 py-2"></textarea>
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-medium mb-1">Upload CAD Files (STEP, IGES, STL)</label>
-                        <input type="file" class="w-full bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-700 rounded px-3 py-2">
-                    </div>
-
-                    <button type="submit" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold py-3 rounded transition-colors">Submit Request for Quote</button>
-                </form>
+        <!-- SLA Badges Bar -->
+        <section class="bg-industrial-900 border-b border-industrial-800 py-4 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-xs">
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-bolt text-accent-500 text-base"></i>
+                    <span><strong>24-Hour</strong> DFM & Price Turnaround</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-user-shield text-accent-500 text-base"></i>
+                    <span><strong>100% Secure</strong> ITAR & NDA Protected</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-chart-line text-accent-500 text-base"></i>
+                    <span><strong>Complimentary</strong> Moldflow Filling Analysis</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fas fa-award text-accent-500 text-base"></i>
+                    <span><strong>ISO 9001 & 13485</strong> Certified Metrology</span>
                 </div>
             </div>
+        </section>
 
-            <!-- Info -->
-            <div class="flex flex-col h-full">
-                <div class="flex flex-col items-center lg:items-start text-center lg:text-left mb-8">
-                    <h3 class="text-2xl font-bold mb-4">Direct Contact</h3>
-                    <div class="space-y-4 mb-8 w-fit text-left">
-                        <p class="flex items-center gap-3"><i class="fas fa-phone text-accent-500 w-5 text-center"></i> <a href="tel:18005557527">+1 (800) 555-PLAS (7527)</a></p>
-                        <p class="flex items-center gap-3"><i class="fas fa-envelope text-accent-500 w-5 text-center"></i> quote@nexusplastics.com</p>
-                        <p class="flex items-start gap-3"><i class="fas fa-map-marker-alt text-accent-500 w-5 mt-1 text-center"></i> <span>1500 Engineering Blvd<br>Manufacturing District<br>Detroit, MI 48201</span></p>
-                        <p class="flex items-start gap-3"><i class="fas fa-clock text-accent-500 w-5 mt-1 text-center"></i> Mon-Fri: 7:00 AM - 6:00 PM</p>
+        <section class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-12 gap-12">
+                <!-- Left: Advanced RFQ Configurator Form (7 cols) -->
+                <div class="lg:col-span-7 bg-white dark:bg-industrial-900 p-8 sm:p-10 rounded-2xl shadow-xl border border-gray-200 dark:border-industrial-800">
+                    <div class="border-b border-gray-200 dark:border-industrial-800 pb-4 mb-6">
+                        <h2 class="text-2xl font-bold text-industrial-900 dark:text-white">Project Engineering Configurator</h2>
+                        <p class="text-xs text-industrial-500 mt-1">Fields marked with an asterisk (*) are mandatory for quotation calculation.</p>
                     </div>
-                    <h4 class="text-lg font-bold mb-3">Connect With Us</h4>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 bg-industrial-200 dark:bg-industrial-800 text-industrial-600 dark:text-industrial-400 rounded-full flex items-center justify-center hover:bg-accent-500 hover:text-white dark:hover:bg-accent-500 dark:hover:text-white transition-all"><i class="fab fa-linkedin-in text-lg"></i></a>
-                        <a href="#" class="w-10 h-10 bg-industrial-200 dark:bg-industrial-800 text-industrial-600 dark:text-industrial-400 rounded-full flex items-center justify-center hover:bg-accent-500 hover:text-white dark:hover:bg-accent-500 dark:hover:text-white transition-all"><i class="fab fa-x-twitter text-lg"></i></a>
-                        <a href="#" class="w-10 h-10 bg-industrial-200 dark:bg-industrial-800 text-industrial-600 dark:text-industrial-400 rounded-full flex items-center justify-center hover:bg-accent-500 hover:text-white dark:hover:bg-accent-500 dark:hover:text-white transition-all"><i class="fab fa-youtube text-lg"></i></a>
-                    </div>
+
+                    <form action="#" method="POST" class="space-y-6">
+                        <!-- Step 1: Contact Details -->
+                        <div>
+                            <span class="text-xs font-bold uppercase tracking-wider text-accent-500 block mb-3">1. Contact & Organization</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-industrial-700 dark:text-industrial-300 mb-1">Full Name *</label>
+                                    <input type="text" required placeholder="John Doe" class="w-full bg-industrial-50 dark:bg-industrial-950 border border-gray-300 dark:border-industrial-700 rounded-lg px-3.5 py-2.5 text-sm text-industrial-900 dark:text-white focus:ring-2 focus:ring-accent-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-industrial-700 dark:text-industrial-300 mb-1">Company / OEM *</label>
+                                    <input type="text" required placeholder="Acme Engineering Corp" class="w-full bg-industrial-50 dark:bg-industrial-950 border border-gray-300 dark:border-industrial-700 rounded-lg px-3.5 py-2.5 text-sm text-industrial-900 dark:text-white focus:ring-2 focus:ring-accent-500 focus:outline-none">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-industrial-700 dark:text-industrial-300 mb-1">Corporate Email *</label>
+                                    <input type="email" required placeholder="j.doe@acme.com" class="w-full bg-industrial-50 dark:bg-industrial-950 border border-gray-300 dark:border-industrial-700 rounded-lg px-3.5 py-2.5 text-sm text-industrial-900 dark:text-white focus:ring-2 focus:ring-accent-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-industrial-700 dark:text-industrial-300 mb-1">Direct Phone *</label>
+                                    <input type="tel" required placeholder="+1 (313) 555-0199" class="w-full bg-industrial-50 dark:bg-industrial-950 border border-gray-300 dark:border-industrial-700 rounded-lg px-3.5 py-2.5 text-sm text-industrial-900 dark:text-white focus:ring-2 focus:ring-accent-500 focus:outline-none">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Material & Tooling Parameters -->
+                        <div class="border-t border-gray-200 dark:border-industrial-800 pt-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-accent-500 block mb-3">2. Material & Tooling Specifications</span>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-industrial-700 dark:text-industrial-300 mb-1">Resin Compound</label>
+                                    <select class="w-full bg-industrial-50 dark:bg-industrial-950 border border-gray-300 dark:border-industrial-700 rounded-lg px-3.5 py-2.5 text-sm text-industrial-900 dark:text-white focus:ring-2 focus:ring-accent-500 focus:outline-none">
+                                        <option>Undecided / Engineer Recommendation</option>
+                                        <option>PEEK (Polyetheretherketone)</option>
+                                        <option>Ultem / PEI (Polyetherimide)</option>
+                                        <option>PA66 30% Glass Filled (Nylon)</option>
+                                        <option>Delrin / POM (Acetal)</option>
+                                        <option>Polycarbonate (PC Optical Grade)</option>
+                                        <option>ABS / PC-ABS Alloy</option>
+                                        <option>Polypropylene (PP Copolymer)</option>
+                                        <option>Custom Engineering Compound</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-industrial-700 dark:text-industrial-300 mb-1">Target SPI Tooling Class</label>
+                                    <select class="w-full bg-industrial-50 dark:bg-industrial-950 border border-gray-300 dark:border-gray-700 rounded-lg px-3.5 py-2.5 text-sm text-industrial-900 dark:text-white focus:ring-2 focus:ring-accent-500 focus:outline-none">
+                                        <option>Class 101 (&gt;1,000,000 cycles, Hardened H13/S7)</option>
+                                        <option>Class 102 (&lt;1,000,000 cycles, P20/420SS)</option>
+                                        <option>Class 103 (&lt;500,000 cycles, Medium Production)</option>
+                                        <option>Class 104 (&lt;100,000 cycles, Prototype/Bridge)</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
+                                <div>
+                                    <label class="block text-xs font-semibold text-industrial-700 dark:text-industrial-300 mb-1">Estimated Annual Volume *</label>
+                                    <input type="number" required placeholder="e.g. 100,000 units" class="w-full bg-industrial-50 dark:bg-industrial-950 border border-gray-300 dark:border-industrial-700 rounded-lg px-3.5 py-2.5 text-sm text-industrial-900 dark:text-white focus:ring-2 focus:ring-accent-500 focus:outline-none">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-industrial-700 dark:text-industrial-300 mb-1">Tolerance Requirement</label>
+                                    <select class="w-full bg-industrial-50 dark:bg-industrial-950 border border-gray-300 dark:border-industrial-700 rounded-lg px-3.5 py-2.5 text-sm text-industrial-900 dark:text-white focus:ring-2 focus:ring-accent-500 focus:outline-none">
+                                        <option>Precision Machined (±0.0015" / ±0.038mm)</option>
+                                        <option>Standard Commercial (±0.004" / ±0.10mm)</option>
+                                        <option>Medical Critical (Optical CMM 100% Inspected)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Secondary Operations & Quality Gate -->
+                        <div class="border-t border-gray-200 dark:border-industrial-800 pt-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-accent-500 block mb-3">3. Secondary Operations & Quality Requirements</span>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-industrial-700 dark:text-industrial-300">
+                                <label class="flex items-center gap-2 cursor-pointer p-2 rounded bg-industrial-50 dark:bg-industrial-950 border border-gray-200 dark:border-industrial-800 hover:border-accent-500">
+                                    <input type="checkbox" class="rounded text-accent-500">
+                                    <span>Ultrasonic Welding</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer p-2 rounded bg-industrial-50 dark:bg-industrial-950 border border-gray-200 dark:border-industrial-800 hover:border-accent-500">
+                                    <input type="checkbox" class="rounded text-accent-500">
+                                    <span>Threaded Brass Inserts</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer p-2 rounded bg-industrial-50 dark:bg-industrial-950 border border-gray-200 dark:border-industrial-800 hover:border-accent-500">
+                                    <input type="checkbox" class="rounded text-accent-500">
+                                    <span>Pad Print / Laser Marking</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer p-2 rounded bg-industrial-50 dark:bg-industrial-950 border border-gray-200 dark:border-industrial-800 hover:border-accent-500">
+                                    <input type="checkbox" class="rounded text-accent-500">
+                                    <span>ISO Class 8 Cleanroom</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer p-2 rounded bg-industrial-50 dark:bg-industrial-950 border border-gray-200 dark:border-industrial-800 hover:border-accent-500">
+                                    <input type="checkbox" class="rounded text-accent-500">
+                                    <span>PPAP Level 3 Report</span>
+                                </label>
+                                <label class="flex items-center gap-2 cursor-pointer p-2 rounded bg-industrial-50 dark:bg-industrial-950 border border-gray-200 dark:border-industrial-800 hover:border-accent-500">
+                                    <input type="checkbox" class="rounded text-accent-500">
+                                    <span>Sub-Assembly Kitting</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: CAD Drag-and-Drop Dropzone -->
+                        <div class="border-t border-gray-200 dark:border-industrial-800 pt-6">
+                            <span class="text-xs font-bold uppercase tracking-wider text-accent-500 block mb-2">4. Upload 3D CAD Files (STEP, IGES, SLDPRT, X_T, STL)</span>
+                            <div class="border-2 border-dashed border-gray-300 dark:border-industrial-700 hover:border-accent-500 rounded-xl p-6 text-center transition-colors bg-industrial-50/50 dark:bg-industrial-950/50 cursor-pointer">
+                                <i class="fas fa-cloud-upload-alt text-3xl text-accent-500 mb-2"></i>
+                                <div class="text-sm font-semibold text-industrial-900 dark:text-white">Drag & drop your 3D CAD models here, or <span class="text-accent-500 underline">browse files</span></div>
+                                <div class="text-xs text-industrial-500 mt-1">Accepted: .step, .stp, .iges, .igs, .sldprt, .x_t, .stl (Up to 100MB per file)</div>
+                                <input type="file" multiple class="hidden">
+                            </div>
+                            <div class="flex items-center gap-2 mt-3 text-xs text-industrial-500">
+                                <i class="fas fa-lock text-accent-500"></i>
+                                <span>All CAD files encrypted with 256-bit TLS and held under strict non-disclosure.</span>
+                            </div>
+                        </div>
+
+                        <!-- Step 5: Project Description & Notes -->
+                        <div class="border-t border-gray-200 dark:border-industrial-800 pt-6">
+                            <label class="block text-xs font-semibold text-industrial-700 dark:text-industrial-300 mb-1">Project Scope & Critical Dimensions *</label>
+                            <textarea required rows="3" placeholder="Describe critical sealing surfaces, mating part fits, cosmetic surface requirements (SPI A2/B1), or target timeline..." class="w-full bg-industrial-50 dark:bg-industrial-950 border border-gray-300 dark:border-industrial-700 rounded-lg px-3.5 py-2.5 text-sm text-industrial-900 dark:text-white focus:ring-2 focus:ring-accent-500 focus:outline-none"></textarea>
+                        </div>
+
+                        <!-- NDA Agreement & Submit -->
+                        <div class="flex items-center gap-2">
+                            <input type="checkbox" id="nda-agree" checked class="rounded text-accent-500">
+                            <label for="nda-agree" class="text-xs text-industrial-600 dark:text-industrial-400">Request mutual countersigned Non-Disclosure Agreement (NDA) with quotation.</label>
+                        </div>
+
+                        <button type="submit" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-accent-500/30 transition-all hover:-translate-y-0.5 text-base flex items-center justify-center gap-2">
+                            <i class="fas fa-paper-plane"></i> Submit RFQ for Engineering Review
+                        </button>
+                    </form>
                 </div>
 
-                <!-- Map -->
-                <div class="bg-gray-200 dark:bg-gray-800 flex-grow w-full rounded-lg overflow-hidden">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11531.06649870198!2d-83.057396!3d42.331429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824ca0110cb1d75%3A0x5776864e35b9c4d2!2sDetroit%2C%20MI!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
+                <!-- Right: Direct Engineering Contact & Plant Tour Info (5 cols) -->
+                <div class="lg:col-span-5 flex flex-col gap-8">
+                    <!-- Direct Contacts Card -->
+                    <div class="bg-white dark:bg-industrial-900 p-8 rounded-2xl shadow-xl border border-gray-200 dark:border-industrial-800">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-lg bg-accent-500/10 text-accent-500 flex items-center justify-center text-lg">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-industrial-900 dark:text-white">Direct Engineering Desk</h3>
+                                <p class="text-xs text-industrial-500">Speak directly with our senior process engineers</p>
+                            </div>
+                        </div>
 
+                        <div class="space-y-4 text-sm text-industrial-700 dark:text-industrial-300 border-b border-gray-200 dark:border-industrial-800 pb-6 mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-industrial-100 dark:bg-industrial-800 flex items-center justify-center text-accent-500">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-industrial-500">Toll-Free Phone</div>
+                                    <a href="tel:18005557527" class="font-semibold text-industrial-900 dark:text-white hover:text-accent-500">+1 (800) 555-PLAS (7527)</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-industrial-100 dark:bg-industrial-800 flex items-center justify-center text-accent-500">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-industrial-500">Tooling Inquiries</div>
+                                    <a href="mailto:quotes@nexusplastics.com" class="font-semibold text-industrial-900 dark:text-white hover:text-accent-500">quotes@nexusplastics.com</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <div class="w-8 h-8 rounded-full bg-industrial-100 dark:bg-industrial-800 flex items-center justify-center text-accent-500 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-industrial-500">Manufacturing Campus</div>
+                                    <span class="font-semibold text-industrial-900 dark:text-white">1500 Engineering Blvd, Manufacturing District, Detroit, MI 48201</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <div class="w-8 h-8 rounded-full bg-industrial-100 dark:bg-industrial-800 flex items-center justify-center text-accent-500">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-industrial-500">Press Floor Operations</div>
+                                    <span class="font-semibold text-industrial-900 dark:text-white">24/7 Production &bull; Office: Mon–Fri 7:00 AM–6:00 PM EST</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Plant Audit Walkthrough Invitation -->
+                        <div class="bg-industrial-50 dark:bg-industrial-950 p-5 rounded-xl border border-gray-200 dark:border-industrial-800">
+                            <div class="flex items-center gap-2 text-accent-500 font-bold text-xs uppercase tracking-wider mb-2">
+                                <i class="fas fa-building"></i> In-Person Plant Audits
+                            </div>
+                            <h4 class="font-bold text-industrial-900 dark:text-white text-sm mb-1">Schedule an On-Site Toolroom & Facility Tour</h4>
+                            <p class="text-xs text-industrial-600 dark:text-industrial-400 mb-3 leading-relaxed">We invite OEM engineering and procurement teams to inspect our 45 press bays, toolroom, and cleanroom facilities in Detroit.</p>
+                            <a href="tel:18005557527" class="inline-flex items-center gap-1.5 text-xs font-bold text-accent-500 hover:text-accent-600">
+                                Book Facility Walkthrough <i class="fas fa-arrow-right text-[10px]"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Embedded Interactive Facility Map -->
+                    <div class="bg-white dark:bg-industrial-900 p-4 rounded-2xl shadow-xl border border-gray-200 dark:border-industrial-800 overflow-hidden flex flex-col">
+                        <div class="flex items-center justify-between mb-3 px-2">
+                            <span class="font-bold text-sm text-industrial-900 dark:text-white"><i class="fas fa-map-marked-alt text-accent-500 mr-1.5"></i> Detroit Logistics Hub</span>
+                            <span class="text-xs text-industrial-500">I-75 & I-94 Freight Access</span>
+                        </div>
+                        <div class="h-64 w-full rounded-xl overflow-hidden bg-gray-200 dark:bg-industrial-950">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11531.06649870198!2d-83.057396!3d42.331429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824ca0110cb1d75%3A0x5776864e35b9c4d2!2sDetroit%2C%20MI!5e0!3m2!1sen!2sus!4v1698765432100!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

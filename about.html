@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr" class="scroll-smooth">
+<html lang="en" dir="ltr" class="scroll-smooth overflow-x-hidden">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,13 +29,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        html, body {
+            overflow-x: hidden;
+            max-width: 100%;
+            width: 100%;
+            position: relative;
+        }
         .glass-header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); }
         .dark .glass-header { background: rgba(28, 36, 49, 0.95); }
         [dir="rtl"] { text-align: right; }
         [dir="rtl"] .ltr-icon { transform: scaleX(-1); }
     </style>
 </head>
-<body class="bg-industrial-50 text-industrial-900 dark:bg-industrial-950 dark:text-industrial-50 transition-colors duration-300 antialiased flex flex-col min-h-screen">
+<body class="bg-industrial-50 text-industrial-900 dark:bg-industrial-950 dark:text-industrial-50 transition-colors duration-300 antialiased flex flex-col min-h-screen overflow-x-hidden w-full max-w-full">
 
     <!-- Header -->
     <header id="main-header" class="fixed w-full top-0 z-50 transition-all duration-300 bg-white dark:bg-industrial-950 border-b border-gray-200 dark:border-industrial-800">
@@ -74,9 +80,13 @@
 
                 </div>
 
-                <!-- Mobile menu button -->
-                <div class="lg:hidden flex items-center gap-4">
-                    <button id="mobile-menu-btn" class="text-industrial-600 dark:text-industrial-300 hover:text-accent-500 focus:outline-none">
+                <!-- Mobile menu and theme toggle buttons -->
+                <div class="lg:hidden flex items-center gap-3">
+                    <button class="theme-toggle-btn text-industrial-500 hover:text-accent-500 dark:text-industrial-400 dark:hover:text-accent-400 transition-colors w-9 h-9 rounded shadow-sm border border-gray-200 dark:border-industrial-700 flex items-center justify-center bg-white dark:bg-industrial-800" aria-label="Toggle Dark Mode">
+                        <i class="fas fa-moon dark:hidden text-sm"></i>
+                        <i class="fas fa-sun hidden dark:block text-sm"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="text-industrial-600 dark:text-industrial-300 hover:text-accent-500 focus:outline-none p-1.5" aria-label="Open Navigation Menu">
                         <i class="fas fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -85,7 +95,7 @@
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white dark:bg-industrial-950 transform translate-x-full transition-transform duration-300 lg:hidden overflow-y-auto">
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-white dark:bg-industrial-950 transform translate-x-full transition-transform duration-300 lg:hidden overflow-y-auto invisible pointer-events-none">
         <div class="p-6">
             <div class="flex justify-between items-center mb-8">
                 <div class="flex items-center gap-2">
@@ -120,10 +130,10 @@
         </div>
     </div>
 
-    <main class="flex-grow pt-20">
+    <main class="flex-grow pt-20 overflow-x-hidden w-full max-w-full">
         <!-- Page Header -->
         <section class="bg-industrial-900 py-20 border-b border-industrial-800 relative overflow-hidden">
-            <div class="absolute inset-0 bg-[url('https://images.pexels.com/photos/2582937/pexels-photo-2582937.jpeg')] bg-cover bg-center opacity-20"></div>
+            <div class="absolute inset-0 bg-[url('images/hero_robot_molding_press.jpg')] bg-cover bg-center opacity-25 mix-blend-luminosity"></div>
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                 <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Engineering Excellence in Plastics</h1>
                 <p class="text-industrial-300 text-lg max-w-2xl mx-auto">Founded on principles of precision engineering, Nexus Plastics is a trusted partner for OEMs requiring demanding tolerances and complex geometries.</p>
@@ -225,29 +235,338 @@
         <!-- Engineering Team -->
         <section class="py-20 bg-industrial-100 dark:bg-industrial-900/50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl font-bold text-industrial-900 dark:text-white mb-12">Our Engineering Leadership</h2>
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-accent-500/10 text-accent-500 mb-3 uppercase tracking-wider">
+                    <i class="fas fa-users-cog"></i> Technical Staff
+                </div>
+                <h2 class="text-3xl lg:text-4xl font-bold text-industrial-900 dark:text-white mb-4">Our Engineering Leadership</h2>
+                <p class="text-industrial-600 dark:text-industrial-300 max-w-2xl mx-auto mb-12 text-sm sm:text-base">Decades of combined master tooling, scientific molding, and metrology leadership driving world-class manufacturing.</p>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Team Member -->
-                    <div class="bg-white dark:bg-industrial-800 rounded-lg shadow-md p-8 text-center border border-gray-100 dark:border-industrial-700 hover:shadow-lg transition-shadow flex flex-col h-full">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" alt="Lead Engineer" class="w-32 h-32 rounded-full object-cover object-center mx-auto mb-6 shadow-md border-4 border-white dark:border-industrial-800">
+                    <!-- Team Member 1 -->
+                    <div class="bg-white dark:bg-industrial-800 rounded-xl shadow-md p-8 text-center border border-gray-100 dark:border-industrial-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full group">
+                        <div class="relative w-32 h-32 mx-auto mb-6">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400" alt="Lead Engineer" class="w-32 h-32 rounded-full object-cover object-center shadow-md border-4 border-white dark:border-industrial-700 group-hover:border-accent-500 transition-colors">
+                            <span class="absolute bottom-1 right-1 bg-accent-500 text-white text-xs w-7 h-7 rounded-full flex items-center justify-center font-bold" title="24+ Years Experience">24y</span>
+                        </div>
                         <h3 class="font-bold text-xl text-industrial-900 dark:text-white">Robert Chen</h3>
-                        <p class="text-accent-500 mb-4 font-medium">VP of Tooling Engineering</p>
-                        <p class="text-industrial-600 dark:text-industrial-400 text-sm flex-grow text-justify">Expert in multi-cavity mold design and conformal cooling systems.</p>
+                        <p class="text-accent-500 mb-4 font-medium text-sm">VP of Tooling Engineering</p>
+                        <p class="text-industrial-600 dark:text-industrial-400 text-sm flex-grow leading-relaxed">Pioneered our multi-cavity hot-runner tooling protocols and conformal cooling channel designs, reducing cycle times by up to 28% across critical automotive programs.</p>
+                        <div class="mt-6 pt-4 border-t border-gray-100 dark:border-industrial-700/60 flex items-center justify-center gap-3 text-xs text-industrial-500">
+                            <span><i class="fas fa-certificate text-accent-500 mr-1"></i> B.S. Tool & Die</span>
+                            <span>&bull;</span>
+                            <span><i class="fas fa-award text-accent-500 mr-1"></i> RJG Master Molder</span>
+                        </div>
                     </div>
-                    <!-- Team Member -->
-                    <div class="bg-white dark:bg-industrial-800 rounded-lg shadow-md p-8 text-center border border-gray-100 dark:border-industrial-700 hover:shadow-lg transition-shadow flex flex-col h-full">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Process Manager" class="w-32 h-32 rounded-full object-cover object-center mx-auto mb-6 shadow-md border-4 border-white dark:border-industrial-800">
+                    <!-- Team Member 2 -->
+                    <div class="bg-white dark:bg-industrial-800 rounded-xl shadow-md p-8 text-center border border-gray-100 dark:border-industrial-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full group">
+                        <div class="relative w-32 h-32 mx-auto mb-6">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400" alt="Process Manager" class="w-32 h-32 rounded-full object-cover object-center shadow-md border-4 border-white dark:border-industrial-700 group-hover:border-accent-500 transition-colors">
+                            <span class="absolute bottom-1 right-1 bg-accent-500 text-white text-xs w-7 h-7 rounded-full flex items-center justify-center font-bold" title="18+ Years Experience">18y</span>
+                        </div>
                         <h3 class="font-bold text-xl text-industrial-900 dark:text-white">Sarah Jenkins</h3>
-                        <p class="text-accent-500 mb-4 font-medium">Master Process Engineer</p>
-                        <p class="text-industrial-600 dark:text-industrial-400 text-sm flex-grow text-justify">Specialist in scientific molding and engineered resin processing.</p>
+                        <p class="text-accent-500 mb-4 font-medium text-sm">Master Process Engineer</p>
+                        <p class="text-industrial-600 dark:text-industrial-400 text-sm flex-grow leading-relaxed">Specialist in high-heat engineering thermoplastics (PEEK, PPS, Ultem). Oversees decoupled scientific molding validation and automated closed-loop viscosity control.</p>
+                        <div class="mt-6 pt-4 border-t border-gray-100 dark:border-industrial-700/60 flex items-center justify-center gap-3 text-xs text-industrial-500">
+                            <span><i class="fas fa-certificate text-accent-500 mr-1"></i> M.S. Plastics Eng.</span>
+                            <span>&bull;</span>
+                            <span><i class="fas fa-award text-accent-500 mr-1"></i> Six Sigma Black Belt</span>
+                        </div>
                     </div>
-                    <!-- Team Member -->
-                    <div class="bg-white dark:bg-industrial-800 rounded-lg shadow-md p-8 text-center border border-gray-100 dark:border-industrial-700 hover:shadow-lg transition-shadow flex flex-col h-full">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" alt="Quality Director" class="w-32 h-32 rounded-full object-cover object-center mx-auto mb-6 shadow-md border-4 border-white dark:border-industrial-800">
+                    <!-- Team Member 3 -->
+                    <div class="bg-white dark:bg-industrial-800 rounded-xl shadow-md p-8 text-center border border-gray-100 dark:border-industrial-700 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col h-full group">
+                        <div class="relative w-32 h-32 mx-auto mb-6">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400" alt="Quality Director" class="w-32 h-32 rounded-full object-cover object-center shadow-md border-4 border-white dark:border-industrial-700 group-hover:border-accent-500 transition-colors">
+                            <span class="absolute bottom-1 right-1 bg-accent-500 text-white text-xs w-7 h-7 rounded-full flex items-center justify-center font-bold" title="21+ Years Experience">21y</span>
+                        </div>
                         <h3 class="font-bold text-xl text-industrial-900 dark:text-white">Michael Torres</h3>
-                        <p class="text-accent-500 mb-4 font-medium">Director of Quality Assurance</p>
-                        <p class="text-industrial-600 dark:text-industrial-400 text-sm flex-grow text-justify">Oversees all CMM metrology and ISO compliance protocols.</p>
+                        <p class="text-accent-500 mb-4 font-medium text-sm">Director of Quality Assurance</p>
+                        <p class="text-industrial-600 dark:text-industrial-400 text-sm flex-grow leading-relaxed">Directs optical CMM metrology, ISO 13485 cleanroom audit compliance, and automotive PPAP Level 3 submissions with a sub-50 PPM defect threshold record.</p>
+                        <div class="mt-6 pt-4 border-t border-gray-100 dark:border-industrial-700/60 flex items-center justify-center gap-3 text-xs text-industrial-500">
+                            <span><i class="fas fa-certificate text-accent-500 mr-1"></i> ASQ Certified CQE</span>
+                            <span>&bull;</span>
+                            <span><i class="fas fa-award text-accent-500 mr-1"></i> ISO Lead Auditor</span>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Plant & Facility Infrastructure Showcase -->
+        <section class="py-20 bg-white dark:bg-industrial-950 border-t border-gray-200 dark:border-industrial-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-accent-500/10 text-accent-500 mb-3 uppercase tracking-wider">
+                        <i class="fas fa-warehouse"></i> Plant Infrastructure
+                    </div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-industrial-900 dark:text-white mb-4">150,000 Sq Ft Precision Manufacturing Campus</h2>
+                    <p class="text-industrial-600 dark:text-industrial-300 text-sm sm:text-base">Our purpose-built Detroit facility integrates high-tonnage molding, an in-house toolroom, and cleanroom packaging under one roof.</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-8 mb-12">
+                    <!-- Facility Area 1 -->
+                    <div class="bg-industrial-50 dark:bg-industrial-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-industrial-800 flex flex-col md:flex-row group hover:border-accent-500/50 transition-all duration-300">
+                        <div class="md:w-1/2 relative min-h-[240px]">
+                            <img src="images/hero_robot_molding_press.jpg" alt="Automated Injection Molding Press Bay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 bg-industrial-950/80 backdrop-blur text-white text-xs font-bold px-2.5 py-1 rounded">
+                                <i class="fas fa-bolt text-accent-500 mr-1"></i> 45 Press Bays
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-6 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-industrial-900 dark:text-white mb-2">Automated Press Fleet</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-sm mb-4 leading-relaxed">
+                                    Electric and hybrid presses ranging from 50T to 1,500T equipped with 3-axis servo robots, automated conveyors, and central desiccant resin drying.
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs text-industrial-700 dark:text-industrial-300 border-t border-gray-200 dark:border-industrial-800 pt-3">
+                                <div><span class="font-semibold text-industrial-900 dark:text-white">Clamping:</span> 50 - 1500 Tons</div>
+                                <div><span class="font-semibold text-industrial-900 dark:text-white">Operation:</span> 24/7 Lights-Out</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility Area 2 -->
+                    <div class="bg-industrial-50 dark:bg-industrial-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-industrial-800 flex flex-col md:flex-row group hover:border-accent-500/50 transition-all duration-300">
+                        <div class="md:w-1/2 relative min-h-[240px]">
+                            <img src="images/plastic_injection_mold_workpiece.jpg" alt="High-Precision CNC Toolroom" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 bg-industrial-950/80 backdrop-blur text-white text-xs font-bold px-2.5 py-1 rounded">
+                                <i class="fas fa-tools text-accent-500 mr-1"></i> In-House Toolroom
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-6 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-industrial-900 dark:text-white mb-2">CNC & EDM Tool Building</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-sm mb-4 leading-relaxed">
+                                    5-axis high-speed CNC milling centers, Charmilles wire & sinker EDMs, and surface grinders delivering micro-tolerance mold cavities in hardened H13/S7 steel.
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs text-industrial-700 dark:text-industrial-300 border-t border-gray-200 dark:border-industrial-800 pt-3">
+                                <div><span class="font-semibold text-industrial-900 dark:text-white">CNC Precision:</span> ±0.0001"</div>
+                                <div><span class="font-semibold text-industrial-900 dark:text-white">Tool Class:</span> SPI 101 - 104</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility Area 3 -->
+                    <div class="bg-industrial-50 dark:bg-industrial-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-industrial-800 flex flex-col md:flex-row group hover:border-accent-500/50 transition-all duration-300">
+                        <div class="md:w-1/2 relative min-h-[240px]">
+                            <img src="images/hero_arburg_precision_press.jpg" alt="Class 8 Cleanroom Medical Molding" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 bg-industrial-950/80 backdrop-blur text-white text-xs font-bold px-2.5 py-1 rounded">
+                                <i class="fas fa-heartbeat text-accent-500 mr-1"></i> ISO Class 8
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-6 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-industrial-900 dark:text-white mb-2">Cleanroom Molding Cell</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-sm mb-4 leading-relaxed">
+                                    Certified cleanroom production environment with positive pressure, HEPA filtration, and automated parts handling for medical diagnostics and microfluidics.
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs text-industrial-700 dark:text-industrial-300 border-t border-gray-200 dark:border-industrial-800 pt-3">
+                                <div><span class="font-semibold text-industrial-900 dark:text-white">Standard:</span> ISO 14644-1</div>
+                                <div><span class="font-semibold text-industrial-900 dark:text-white">Packaging:</span> Medical Pouch</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Facility Area 4 -->
+                    <div class="bg-industrial-50 dark:bg-industrial-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-industrial-800 flex flex-col md:flex-row group hover:border-accent-500/50 transition-all duration-300">
+                        <div class="md:w-1/2 relative min-h-[240px]">
+                            <img src="images/molded_plastic_part.jpg" alt="Metrology & Quality Lab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 bg-industrial-950/80 backdrop-blur text-white text-xs font-bold px-2.5 py-1 rounded">
+                                <i class="fas fa-microscope text-accent-500 mr-1"></i> Metrology Lab
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 p-6 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-industrial-900 dark:text-white mb-2">Metrology & Material Lab</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-sm mb-4 leading-relaxed">
+                                    Temperature-stabilized metrology room featuring Zeiss 3D coordinate measuring machines (CMM), optical comparators, melt flow indexers, and moisture titration.
+                                </p>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs text-industrial-700 dark:text-industrial-300 border-t border-gray-200 dark:border-industrial-800 pt-3">
+                                <div><span class="font-semibold text-industrial-900 dark:text-white">CMM Resolution:</span> 0.9 µm</div>
+                                <div><span class="font-semibold text-industrial-900 dark:text-white">Documentation:</span> Full FAI / PPAP</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Live Campus Capability Matrix Bar -->
+                <div class="bg-gradient-to-r from-industrial-900 to-industrial-950 text-white p-6 rounded-2xl border border-industrial-800 shadow-xl grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div>
+                        <div class="text-accent-500 text-2xl font-black mb-1">150,000</div>
+                        <div class="text-xs uppercase tracking-wider text-industrial-400">Total Facility Sq Ft</div>
+                    </div>
+                    <div>
+                        <div class="text-accent-500 text-2xl font-black mb-1">45 Units</div>
+                        <div class="text-xs uppercase tracking-wider text-industrial-400">Electric & Hybrid Fleet</div>
+                    </div>
+                    <div>
+                        <div class="text-accent-500 text-2xl font-black mb-1">3.2M lbs</div>
+                        <div class="text-xs uppercase tracking-wider text-industrial-400">Resin Processed / Year</div>
+                    </div>
+                    <div>
+                        <div class="text-accent-500 text-2xl font-black mb-1">&lt; 35 PPM</div>
+                        <div class="text-xs uppercase tracking-wider text-industrial-400">Customer Defect Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Milestones & Growth Timeline -->
+        <section class="py-20 bg-industrial-50 dark:bg-industrial-900 border-t border-gray-200 dark:border-industrial-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-accent-500/10 text-accent-500 mb-3 uppercase tracking-wider">
+                        <i class="fas fa-history"></i> Our Evolution
+                    </div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-industrial-900 dark:text-white mb-4">25 Years of Engineering Innovation</h2>
+                    <p class="text-industrial-600 dark:text-industrial-300 text-sm sm:text-base">From a 3-press tool shop to an international tier-1 precision injection molding manufacturing powerhouse.</p>
+                </div>
+
+                <div class="relative border-l-2 border-accent-500/40 ml-4 md:ml-32 space-y-12">
+                    <!-- Milestone 1 -->
+                    <div class="relative pl-8 group">
+                        <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-accent-500 text-white flex items-center justify-center text-xs shadow-md shadow-accent-500/50">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="md:absolute md:-left-32 md:top-1 font-black text-xl text-accent-500">2001</div>
+                        <div class="bg-white dark:bg-industrial-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-industrial-700 hover:shadow-md transition-shadow">
+                            <h3 class="text-lg font-bold text-industrial-900 dark:text-white mb-1">Company Founded in Detroit</h3>
+                            <p class="text-industrial-600 dark:text-industrial-400 text-sm leading-relaxed">
+                                Established with 3 hydraulic presses and an in-house tool & die maintenance bench, delivering precision gears and brackets for regional automotive assemblers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 2 -->
+                    <div class="relative pl-8 group">
+                        <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-accent-500 text-white flex items-center justify-center text-xs shadow-md shadow-accent-500/50">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="md:absolute md:-left-32 md:top-1 font-black text-xl text-accent-500">2008</div>
+                        <div class="bg-white dark:bg-industrial-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-industrial-700 hover:shadow-md transition-shadow">
+                            <h3 class="text-lg font-bold text-industrial-900 dark:text-white mb-1">ISO 9001 Certification & Toolroom Expansion</h3>
+                            <p class="text-industrial-600 dark:text-industrial-400 text-sm leading-relaxed">
+                                Formally accredited under ISO 9001 and invested $4M in Makino high-speed 5-axis CNC machining centers and Charmilles Wire EDM systems for internal SPI Class 101 tool fabrication.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 3 -->
+                    <div class="relative pl-8 group">
+                        <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-accent-500 text-white flex items-center justify-center text-xs shadow-md shadow-accent-500/50">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="md:absolute md:-left-32 md:top-1 font-black text-xl text-accent-500">2016</div>
+                        <div class="bg-white dark:bg-industrial-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-industrial-700 hover:shadow-md transition-shadow">
+                            <h3 class="text-lg font-bold text-industrial-900 dark:text-white mb-1">All-Electric Press Fleet & RJG Scientific Molding</h3>
+                            <p class="text-industrial-600 dark:text-industrial-400 text-sm leading-relaxed">
+                                Transitioned primary molding floor to all-electric ARBURG and Borche presses. Fully integrated RJG eDART cavity pressure sensors for automated bad-part rejection at the gate.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 4 -->
+                    <div class="relative pl-8 group">
+                        <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-accent-500 text-white flex items-center justify-center text-xs shadow-md shadow-accent-500/50">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="md:absolute md:-left-32 md:top-1 font-black text-xl text-accent-500">2021</div>
+                        <div class="bg-white dark:bg-industrial-800 p-6 rounded-xl shadow-sm border border-gray-200 dark:border-industrial-700 hover:shadow-md transition-shadow">
+                            <h3 class="text-lg font-bold text-industrial-900 dark:text-white mb-1">ISO 13485 (Medical) & Class 8 Cleanroom Commissioning</h3>
+                            <p class="text-industrial-600 dark:text-industrial-400 text-sm leading-relaxed">
+                                Completed cleanroom construction for microfluidic, surgical cartridge, and diagnostic pipette molding under stringent bio-burden and particulate protocols.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Milestone 5 -->
+                    <div class="relative pl-8 group">
+                        <div class="absolute -left-3 top-1.5 w-6 h-6 rounded-full bg-accent-500 text-white flex items-center justify-center text-xs shadow-md shadow-accent-500/50">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="md:absolute md:-left-32 md:top-1 font-black text-xl text-accent-500">2026</div>
+                        <div class="bg-white dark:bg-industrial-800 p-6 rounded-xl shadow-sm border border-accent-500/40 bg-accent-500/5 hover:shadow-md transition-shadow">
+                            <div class="inline-block px-2 py-0.5 rounded text-[11px] font-bold bg-accent-500 text-white uppercase mb-2">Current Benchmark</div>
+                            <h3 class="text-lg font-bold text-industrial-900 dark:text-white mb-1">Industry 4.0 Smart Factory & AI Metrology</h3>
+                            <p class="text-industrial-600 dark:text-industrial-400 text-sm leading-relaxed">
+                                Operating 45 fully connected robotic injection molding cells with live cloud telemetry, automated automated guided vehicles (AGVs), and Zeiss optical 3D scan verification.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Compliance Framework -->
+        <section class="py-20 bg-white dark:bg-industrial-950 border-t border-gray-200 dark:border-industrial-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-accent-500/10 text-accent-500 mb-3 uppercase tracking-wider">
+                        <i class="fas fa-stamp"></i> Quality Standards
+                    </div>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-industrial-900 dark:text-white mb-4">Certified Quality & Compliance</h2>
+                    <p class="text-industrial-600 dark:text-industrial-300 text-sm sm:text-base">We adhere to the strictest international standards for automotive, medical, aerospace, and consumer applications.</p>
+                </div>
+
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 rounded-xl bg-industrial-50 dark:bg-industrial-900 border border-gray-200 dark:border-industrial-800 text-center hover:border-accent-500/40 transition-colors">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-accent-500/10 text-accent-500 flex items-center justify-center text-2xl">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-1">ISO 9001:2015</h3>
+                        <p class="text-xs text-accent-500 font-semibold uppercase tracking-wider mb-2">Quality Management</p>
+                        <p class="text-xs text-industrial-600 dark:text-industrial-400">Full traceability, standardized operational procedures, continuous audit verification.</p>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-industrial-50 dark:bg-industrial-900 border border-gray-200 dark:border-industrial-800 text-center hover:border-accent-500/40 transition-colors">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-accent-500/10 text-accent-500 flex items-center justify-center text-2xl">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-1">IATF 16949</h3>
+                        <p class="text-xs text-accent-500 font-semibold uppercase tracking-wider mb-2">Automotive Standard</p>
+                        <p class="text-xs text-industrial-600 dark:text-industrial-400">Complete PPAP Level 1–5 documentation, APQP framework, and defect prevention.</p>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-industrial-50 dark:bg-industrial-900 border border-gray-200 dark:border-industrial-800 text-center hover:border-accent-500/40 transition-colors">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-accent-500/10 text-accent-500 flex items-center justify-center text-2xl">
+                            <i class="fas fa-briefcase-medical"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-1">ISO 13485:2016</h3>
+                        <p class="text-xs text-accent-500 font-semibold uppercase tracking-wider mb-2">Medical Devices</p>
+                        <p class="text-xs text-industrial-600 dark:text-industrial-400">Validated bio-compatible resin processing, risk analysis (ISO 14971), Class 8 cleanroom.</p>
+                    </div>
+
+                    <div class="p-6 rounded-xl bg-industrial-50 dark:bg-industrial-900 border border-gray-200 dark:border-industrial-800 text-center hover:border-accent-500/40 transition-colors">
+                        <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-accent-500/10 text-accent-500 flex items-center justify-center text-2xl">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-1">RoHS & REACH</h3>
+                        <p class="text-xs text-accent-500 font-semibold uppercase tracking-wider mb-2">Environmental Compliance</p>
+                        <p class="text-xs text-industrial-600 dark:text-industrial-400">100% heavy-metal-free resins, closed-loop regrind management, UL 94 V-0 certifications.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Engineering Consultation CTA Banner -->
+        <section class="bg-gradient-to-r from-industrial-950 via-industrial-900 to-industrial-950 py-16 border-t border-industrial-800 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+                <div class="max-w-2xl">
+                    <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-accent-500/20 text-accent-400 mb-3 uppercase tracking-wider">
+                        <i class="fas fa-phone-alt"></i> Direct Engineering Access
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Partner Directly with Our Senior Tooling Engineers</h2>
+                    <p class="text-industrial-300 text-sm sm:text-base leading-relaxed">Schedule a 30-minute virtual or on-site DFM consultation to analyze your part geometries, gate placements, and cycle-time optimizations.</p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 flex-shrink-0">
+                    <a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-accent-500 hover:bg-accent-600 text-white font-bold px-8 py-3.5 rounded-lg shadow-lg shadow-accent-500/30 transition-all hover:-translate-y-0.5">
+                        <i class="fas fa-calendar-check"></i> Book DFM Review
+                    </a>
+                    <a href="capabilities.html" class="inline-flex items-center justify-center gap-2 bg-industrial-800 hover:bg-industrial-700 text-white font-semibold px-6 py-3.5 rounded-lg border border-industrial-700 transition-colors">
+                        View Fleet Specs
+                    </a>
                 </div>
             </div>
         </section>
