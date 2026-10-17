@@ -115,34 +115,34 @@
 
     <main class="flex-grow pt-20 overflow-x-hidden w-full max-w-full">
         <!-- Header -->
-        <section class="bg-industrial-950 py-20 text-center text-white relative overflow-hidden border-b border-industrial-800">
+        <section class="bg-industrial-950 pt-28 pb-16 sm:py-20 text-center text-white relative overflow-hidden border-b border-industrial-800">
             <div class="absolute inset-0 bg-[url('images/hero_robot_molding_press.jpg')] bg-cover bg-center opacity-25 mix-blend-luminosity"></div>
             <div class="max-w-7xl mx-auto px-4 relative z-10">
                 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-accent-500/20 text-accent-400 mb-4 uppercase tracking-wider">
                     <i class="fas fa-file-signature"></i> Instant DFM & Tooling Pricing
                 </span>
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Request a Manufacturing & Tooling Quote</h1>
-                <p class="text-industrial-300 text-base md:text-lg max-w-2xl mx-auto">Upload your 3D CAD files for an automated moldability review, gate placement simulation, and comprehensive production quotation within 24 hours.</p>
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">Request a Manufacturing & Tooling Quote</h1>
+                <p class="text-industrial-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto">Upload your 3D CAD files for an automated moldability review, gate placement simulation, and comprehensive production quotation within 24 hours.</p>
             </div>
         </section>
 
         <!-- SLA Badges Bar -->
         <section class="bg-industrial-900 border-b border-industrial-800 py-4 text-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-xs">
-                <div class="flex items-center justify-center gap-2">
-                    <i class="fas fa-bolt text-accent-500 text-base"></i>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-center text-xs">
+                <div class="flex items-center justify-center gap-2 py-1">
+                    <i class="fas fa-bolt text-accent-500 text-base flex-shrink-0"></i>
                     <span><strong>24-Hour</strong> DFM & Price Turnaround</span>
                 </div>
-                <div class="flex items-center justify-center gap-2">
-                    <i class="fas fa-user-shield text-accent-500 text-base"></i>
+                <div class="flex items-center justify-center gap-2 py-1">
+                    <i class="fas fa-user-shield text-accent-500 text-base flex-shrink-0"></i>
                     <span><strong>100% Secure</strong> ITAR & NDA Protected</span>
                 </div>
-                <div class="flex items-center justify-center gap-2">
-                    <i class="fas fa-chart-line text-accent-500 text-base"></i>
+                <div class="flex items-center justify-center gap-2 py-1">
+                    <i class="fas fa-chart-line text-accent-500 text-base flex-shrink-0"></i>
                     <span><strong>Complimentary</strong> Moldflow Filling Analysis</span>
                 </div>
-                <div class="flex items-center justify-center gap-2">
-                    <i class="fas fa-award text-accent-500 text-base"></i>
+                <div class="flex items-center justify-center gap-2 py-1">
+                    <i class="fas fa-award text-accent-500 text-base flex-shrink-0"></i>
                     <span><strong>ISO 9001 & 13485</strong> Certified Metrology</span>
                 </div>
             </div>
@@ -286,7 +286,7 @@
                             <label for="nda-agree" class="text-xs text-industrial-600 dark:text-industrial-400">Request mutual countersigned Non-Disclosure Agreement (NDA) with quotation.</label>
                         </div>
 
-                        <button type="submit" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 rounded-xl shadow-lg shadow-accent-500/30 transition-all hover:-translate-y-0.5 text-base flex items-center justify-center gap-2">
+                        <button type="submit" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-bold py-3.5 sm:py-4 px-3 sm:px-6 rounded-xl shadow-lg shadow-accent-500/30 transition-all hover:-translate-y-0.5 text-xs sm:text-base flex items-center justify-center gap-2 whitespace-nowrap">
                             <i class="fas fa-paper-plane"></i> Submit RFQ for Engineering Review
                         </button>
                     </form>
@@ -381,17 +381,23 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                 <div class="flex flex-col justify-between h-full">
-                    <div class="flex items-center gap-2 mb-6">
-                        <div class="w-8 h-8 bg-accent-500 rounded flex items-center justify-center text-white font-bold text-xl">
+                    <a href="index.html" class="flex items-center gap-2 mb-6 group cursor-pointer">
+                        <div class="w-8 h-8 bg-accent-500 rounded flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform">
                             <i class="fas fa-cube"></i>
                         </div>
                         <span class="font-bold text-xl tracking-tight text-industrial-900 dark:text-white">Nexus<span class="text-accent-500">Plastics</span></span>
-                    </div>
+                    </a>
                     <p class="mb-6 text-sm">Premium precision injection molding and custom plastic parts manufacturing for critical industrial applications worldwide.</p>
                     <div class="flex space-x-4 rtl:space-x-reverse">
-                        <a href="#" class="text-industrial-500 hover:text-industrial-900 dark:text-industrial-400 dark:hover:text-white transition-colors"><i class="fab fa-linkedin text-xl"></i></a>
-                        <a href="#" class="text-industrial-500 hover:text-industrial-900 dark:text-industrial-400 dark:hover:text-white transition-colors"><i class="fab fa-x-twitter text-xl"></i></a>
-                        <a href="#" class="text-industrial-500 hover:text-industrial-900 dark:text-industrial-400 dark:hover:text-white transition-colors"><i class="fab fa-youtube text-xl"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                            class="w-9 h-9 rounded-full bg-industrial-200 dark:bg-industrial-800 flex items-center justify-center text-industrial-600 dark:text-industrial-400 hover:bg-accent-500 hover:text-white dark:hover:bg-accent-500 dark:hover:text-white transform hover:scale-110 transition-all duration-200"><i
+                                class="fab fa-linkedin text-lg"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"
+                            class="w-9 h-9 rounded-full bg-industrial-200 dark:bg-industrial-800 flex items-center justify-center text-industrial-600 dark:text-industrial-400 hover:bg-accent-500 hover:text-white dark:hover:bg-accent-500 dark:hover:text-white transform hover:scale-110 transition-all duration-200"><i
+                                class="fab fa-x-twitter text-lg"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+                            class="w-9 h-9 rounded-full bg-industrial-200 dark:bg-industrial-800 flex items-center justify-center text-industrial-600 dark:text-industrial-400 hover:bg-accent-500 hover:text-white dark:hover:bg-accent-500 dark:hover:text-white transform hover:scale-110 transition-all duration-200"><i
+                                class="fab fa-youtube text-lg"></i></a>
                     </div>
                 </div>
                 

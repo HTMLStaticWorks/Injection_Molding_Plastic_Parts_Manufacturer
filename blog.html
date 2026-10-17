@@ -236,24 +236,24 @@
                 </div>
 
                 <!-- Categories Tab Navigation Menu -->
-                <nav class="blog-tab-nav flex flex-wrap gap-3 sm:gap-4 justify-center mb-10" role="tablist" aria-label="Blog Article Categories">
+                <nav class="blog-tab-nav grid grid-cols-2 sm:flex sm:flex-wrap gap-2.5 sm:gap-4 justify-center mb-10 max-w-xl mx-auto sm:max-w-none" role="tablist" aria-label="Blog Article Categories">
                     <a href="#all" data-tab="all" role="tab" aria-selected="true"
-                        class="blog-tab-btn active px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-accent-500 text-white shadow-md flex items-center gap-2">
+                        class="blog-tab-btn active px-3 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-accent-500 text-white shadow-md flex items-center justify-center gap-2 whitespace-nowrap w-full sm:w-auto">
                         <i class="fas fa-th-large"></i> <span>All Articles</span>
                         <span class="tab-count text-xs px-2 py-0.5 rounded-full bg-white/20 text-white font-mono">9</span>
                     </a>
                     <a href="#mold-design" data-tab="mold-design" role="tab" aria-selected="false"
-                        class="blog-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-industrial-800 text-industrial-700 dark:text-industrial-300 border border-gray-200 dark:border-industrial-700 hover:border-accent-500 flex items-center gap-2">
+                        class="blog-tab-btn px-3 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-industrial-800 text-industrial-700 dark:text-industrial-300 border border-gray-200 dark:border-industrial-700 hover:border-accent-500 flex items-center justify-center gap-2 whitespace-nowrap w-full sm:w-auto">
                         <i class="fas fa-drafting-compass"></i> <span>Mold Design</span>
                         <span class="tab-count text-xs px-2 py-0.5 rounded-full bg-industrial-100 dark:bg-industrial-700 text-industrial-600 dark:text-industrial-300 font-mono">3</span>
                     </a>
                     <a href="#material-section" data-tab="material-section" data-alias="material-selection" role="tab" aria-selected="false"
-                        class="blog-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-industrial-800 text-industrial-700 dark:text-industrial-300 border border-gray-200 dark:border-industrial-700 hover:border-accent-500 flex items-center gap-2">
+                        class="blog-tab-btn px-3 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-industrial-800 text-industrial-700 dark:text-industrial-300 border border-gray-200 dark:border-industrial-700 hover:border-accent-500 flex items-center justify-center gap-2 whitespace-nowrap w-full sm:w-auto">
                         <i class="fas fa-atom"></i> <span>Material Section</span>
                         <span class="tab-count text-xs px-2 py-0.5 rounded-full bg-industrial-100 dark:bg-industrial-700 text-industrial-600 dark:text-industrial-300 font-mono">3</span>
                     </a>
                     <a href="#dfm-guidelines" data-tab="dfm-guidelines" role="tab" aria-selected="false"
-                        class="blog-tab-btn px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-industrial-800 text-industrial-700 dark:text-industrial-300 border border-gray-200 dark:border-industrial-700 hover:border-accent-500 flex items-center gap-2">
+                        class="blog-tab-btn px-3 sm:px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-industrial-800 text-industrial-700 dark:text-industrial-300 border border-gray-200 dark:border-industrial-700 hover:border-accent-500 flex items-center justify-center gap-2 whitespace-nowrap w-full sm:w-auto">
                         <i class="fas fa-ruler-combined"></i> <span>DFM Guidelines</span>
                         <span class="tab-count text-xs px-2 py-0.5 rounded-full bg-industrial-100 dark:bg-industrial-700 text-industrial-600 dark:text-industrial-300 font-mono">3</span>
                     </a>
@@ -294,13 +294,15 @@
                             </button>
                             <span class="absolute bottom-3 right-3 bg-accent-500/90 text-white text-[11px] font-mono px-2 py-0.5 rounded font-semibold">CAE Analysis</span>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
-                                <span class="font-semibold text-accent-500">Autodesk Moldflow</span>
-                                <span>Aug 24, 2025</span>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
+                                    <span class="font-semibold text-accent-500">Autodesk Moldflow</span>
+                                    <span>Aug 24, 2025</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug min-h-[3.5rem] sm:min-h-[4.5rem] md:min-h-[5.25rem] lg:min-h-[6.75rem]">Moldflow Simulation: Eliminating Weld Lines & Air Traps</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 leading-relaxed min-h-[4.5rem] md:min-h-[5.5rem]">Predicting gate fill imbalances, shear heating, clamp tonnage, and venting requirements before cutting H13 tool steel on multi-cavity molds.</p>
                             </div>
-                            <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug">Moldflow Simulation: Eliminating Weld Lines & Air Traps</h3>
-                            <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 flex-grow leading-relaxed">Predicting gate fill imbalances, shear heating, clamp tonnage, and venting requirements before cutting H13 tool steel on multi-cavity molds.</p>
                             <div class="pt-3 border-t border-gray-100 dark:border-industrial-700/60 flex items-center justify-between mt-auto">
                                 <span class="text-xs text-industrial-400 font-mono">Fill Balance &plusmn;2%</span>
                                 <a href="contact.html" class="text-accent-500 font-semibold text-xs sm:text-sm hover:text-accent-600 flex items-center gap-1.5">
@@ -320,13 +322,15 @@
                             </button>
                             <span class="absolute bottom-3 right-3 bg-accent-500/90 text-white text-[11px] font-mono px-2 py-0.5 rounded font-semibold">Tooling Steel</span>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
-                                <span class="font-semibold text-accent-500">SPI Standards</span>
-                                <span>Sep 28, 2025</span>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
+                                    <span class="font-semibold text-accent-500">SPI Standards</span>
+                                    <span>Sep 28, 2025</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug min-h-[3.5rem] sm:min-h-[4.5rem] md:min-h-[5.25rem] lg:min-h-[6.75rem]">Tool Steel Selection: H13 vs. S7 vs. 420 Stainless Steel</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 leading-relaxed min-h-[4.5rem] md:min-h-[5.5rem]">Engineering evaluation of core/cavity hardness (48-52 HRC), thermal conductivity, SPI A-1 polishability, and corrosion resistance against flame-retardant outgassing.</p>
                             </div>
-                            <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug">Tool Steel Selection: H13 vs. S7 vs. 420 Stainless Steel</h3>
-                            <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 flex-grow leading-relaxed">Engineering evaluation of core/cavity hardness (48-52 HRC), thermal conductivity, SPI A-1 polishability, and corrosion resistance against flame-retardant outgassing.</p>
                             <div class="pt-3 border-t border-gray-100 dark:border-industrial-700/60 flex items-center justify-between mt-auto">
                                 <span class="text-xs text-industrial-400 font-mono">1,000,000+ Cycles</span>
                                 <a href="contact.html" class="text-accent-500 font-semibold text-xs sm:text-sm hover:text-accent-600 flex items-center gap-1.5">
@@ -346,13 +350,15 @@
                             </button>
                             <span class="absolute bottom-3 right-3 bg-accent-500/90 text-white text-[11px] font-mono px-2 py-0.5 rounded font-semibold">Cavity Transducers</span>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
-                                <span class="font-semibold text-accent-500">RJG Decoupled II</span>
-                                <span>Sep 12, 2025</span>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
+                                    <span class="font-semibold text-accent-500">RJG Decoupled II</span>
+                                    <span>Sep 12, 2025</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug min-h-[3.5rem] sm:min-h-[4.5rem] md:min-h-[5.25rem] lg:min-h-[6.75rem]">Scientific Molding & RJG Decoupled II: Minimizing Cavity Variance</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 leading-relaxed min-h-[4.5rem] md:min-h-[5.5rem]">Implementing decoupled molding methodologies with real-time in-mold transducers to decouple fill from pack, guaranteeing shot weight repeatability within 0.05%.</p>
                             </div>
-                            <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug">Scientific Molding & RJG Decoupled II: Minimizing Cavity Variance</h3>
-                            <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 flex-grow leading-relaxed">Implementing decoupled molding methodologies with real-time in-mold transducers to decouple fill from pack, guaranteeing shot weight repeatability within 0.05%.</p>
                             <div class="pt-3 border-t border-gray-100 dark:border-industrial-700/60 flex items-center justify-between mt-auto">
                                 <span class="text-xs text-industrial-400 font-mono">Weight Var &lt; 0.05%</span>
                                 <a href="contact.html" class="text-accent-500 font-semibold text-xs sm:text-sm hover:text-accent-600 flex items-center gap-1.5">
@@ -372,13 +378,15 @@
                             </button>
                             <span class="absolute bottom-3 right-3 bg-accent-500/90 text-white text-[11px] font-mono px-2 py-0.5 rounded font-semibold">PEEK / PPS</span>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
-                                <span class="font-semibold text-accent-500">Thermal Resistance</span>
-                                <span>Oct 15, 2025</span>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
+                                    <span class="font-semibold text-accent-500">Thermal Resistance</span>
+                                    <span>Oct 15, 2025</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug min-h-[3.5rem] sm:min-h-[4.5rem] md:min-h-[5.25rem] lg:min-h-[6.75rem]">Choosing Engineering Resins for High-Heat Applications (PEEK, Ultem, PPS)</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 leading-relaxed min-h-[4.5rem] md:min-h-[5.5rem]">Comparative analysis of continuous service temperatures exceeding 200&deg;C, dielectric insulation, and dimensional stability in extreme under-hood environments.</p>
                             </div>
-                            <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug">Choosing Engineering Resins for High-Heat Applications (PEEK, Ultem, PPS)</h3>
-                            <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 flex-grow leading-relaxed">Comparative analysis of continuous service temperatures exceeding 200&deg;C, dielectric insulation, and dimensional stability in extreme under-hood environments.</p>
                             <div class="pt-3 border-t border-gray-100 dark:border-industrial-700/60 flex items-center justify-between mt-auto">
                                 <span class="text-xs text-industrial-400 font-mono">HDT &gt; 210&deg;C</span>
                                 <a href="contact.html" class="text-accent-500 font-semibold text-xs sm:text-sm hover:text-accent-600 flex items-center gap-1.5">
@@ -398,13 +406,15 @@
                             </button>
                             <span class="absolute bottom-3 right-3 bg-accent-500/90 text-white text-[11px] font-mono px-2 py-0.5 rounded font-semibold">Polymer Physics</span>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
-                                <span class="font-semibold text-accent-500">Glass-Filled Resins</span>
-                                <span>Nov 02, 2025</span>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
+                                    <span class="font-semibold text-accent-500">Glass-Filled Resins</span>
+                                    <span>Nov 02, 2025</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug min-h-[3.5rem] sm:min-h-[4.5rem] md:min-h-[5.25rem] lg:min-h-[6.75rem]">Resin Shrinkage, Anisotropic Warpage & Glass-Fiber Orientation</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 leading-relaxed min-h-[4.5rem] md:min-h-[5.5rem]">Mastering volumetric shrinkage differentials in 30% glass-reinforced polyamides through gate placement, cooling water profiling, and pack time optimization.</p>
                             </div>
-                            <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug">Resin Shrinkage, Anisotropic Warpage & Glass-Fiber Orientation</h3>
-                            <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 flex-grow leading-relaxed">Mastering volumetric shrinkage differentials in 30% glass-reinforced polyamides through gate placement, cooling water profiling, and pack time optimization.</p>
                             <div class="pt-3 border-t border-gray-100 dark:border-industrial-700/60 flex items-center justify-between mt-auto">
                                 <span class="text-xs text-industrial-400 font-mono">Shrinkage: 0.2% - 0.5%</span>
                                 <a href="contact.html" class="text-accent-500 font-semibold text-xs sm:text-sm hover:text-accent-600 flex items-center gap-1.5">
@@ -424,13 +434,15 @@
                             </button>
                             <span class="absolute bottom-3 right-3 bg-accent-500/90 text-white text-[11px] font-mono px-2 py-0.5 rounded font-semibold">USP Class VI</span>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
-                                <span class="font-semibold text-accent-500">ISO 13485</span>
-                                <span>Jul 19, 2025</span>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
+                                    <span class="font-semibold text-accent-500">ISO 13485</span>
+                                    <span>Jul 19, 2025</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug min-h-[3.5rem] sm:min-h-[4.5rem] md:min-h-[5.25rem] lg:min-h-[6.75rem]">Cleanroom Medical Molding: USP Class VI & ISO 10993 Resins</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 leading-relaxed min-h-[4.5rem] md:min-h-[5.5rem]">Regulatory roadmap and qualification protocols for optical-grade cyclic olefin copolymers (COC) and PMMA molded in certified ISO Class 8 cleanrooms.</p>
                             </div>
-                            <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug">Cleanroom Medical Molding: USP Class VI & ISO 10993 Resins</h3>
-                            <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 flex-grow leading-relaxed">Regulatory roadmap and qualification protocols for optical-grade cyclic olefin copolymers (COC) and PMMA molded in certified ISO Class 8 cleanrooms.</p>
                             <div class="pt-3 border-t border-gray-100 dark:border-industrial-700/60 flex items-center justify-between mt-auto">
                                 <span class="text-xs text-industrial-400 font-mono">Biocompatible &bull; FDA</span>
                                 <a href="contact.html" class="text-accent-500 font-semibold text-xs sm:text-sm hover:text-accent-600 flex items-center gap-1.5">
@@ -450,13 +462,15 @@
                             </button>
                             <span class="absolute bottom-3 right-3 bg-accent-500/90 text-white text-[11px] font-mono px-2 py-0.5 rounded font-semibold">DFM Basics</span>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
-                                <span class="font-semibold text-accent-500">Core Geometry</span>
-                                <span>Aug 18, 2025</span>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
+                                    <span class="font-semibold text-accent-500">Core Geometry</span>
+                                    <span>Aug 18, 2025</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug min-h-[3.5rem] sm:min-h-[4.5rem] md:min-h-[5.25rem] lg:min-h-[6.75rem]">Draft Angles, Wall Thickness & Radii: Fundamental DFM Rules</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 leading-relaxed min-h-[4.5rem] md:min-h-[5.5rem]">Essential design rules covering draft angles (1.0&deg;-2.5&deg;), uniform nominal wall transitions (3:1 blend), and internal radii (0.5T) to eliminate sink marks and part sticking.</p>
                             </div>
-                            <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug">Draft Angles, Wall Thickness & Radii: Fundamental DFM Rules</h3>
-                            <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 flex-grow leading-relaxed">Essential design rules covering draft angles (1.0&deg;-2.5&deg;), uniform nominal wall transitions (3:1 blend), and internal radii (0.5T) to eliminate sink marks and part sticking.</p>
                             <div class="pt-3 border-t border-gray-100 dark:border-industrial-700/60 flex items-center justify-between mt-auto">
                                 <span class="text-xs text-industrial-400 font-mono">Draft: 1&deg; - 2.5&deg;</span>
                                 <a href="contact.html" class="text-accent-500 font-semibold text-xs sm:text-sm hover:text-accent-600 flex items-center gap-1.5">
@@ -476,13 +490,15 @@
                             </button>
                             <span class="absolute bottom-3 right-3 bg-accent-500/90 text-white text-[11px] font-mono px-2 py-0.5 rounded font-semibold">Fastening DFM</span>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
-                                <span class="font-semibold text-accent-500">Assembly Tech</span>
-                                <span>Aug 08, 2025</span>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
+                                    <span class="font-semibold text-accent-500">Assembly Tech</span>
+                                    <span>Aug 08, 2025</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug min-h-[3.5rem] sm:min-h-[4.5rem] md:min-h-[5.25rem] lg:min-h-[6.75rem]">Insert Molding vs. Ultrasonic Heat Staking: Torque & Pull Strength</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 leading-relaxed min-h-[4.5rem] md:min-h-[5.5rem]">Comparative mechanical pull-out test data evaluating knurled brass insert retention, rotational torque resistance, and cycle economics in rigid polymer housings.</p>
                             </div>
-                            <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug">Insert Molding vs. Ultrasonic Heat Staking: Torque & Pull Strength</h3>
-                            <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 flex-grow leading-relaxed">Comparative mechanical pull-out test data evaluating knurled brass insert retention, rotational torque resistance, and cycle economics in rigid polymer housings.</p>
                             <div class="pt-3 border-t border-gray-100 dark:border-industrial-700/60 flex items-center justify-between mt-auto">
                                 <span class="text-xs text-industrial-400 font-mono">Pull Force &gt; 1.2 kN</span>
                                 <a href="contact.html" class="text-accent-500 font-semibold text-xs sm:text-sm hover:text-accent-600 flex items-center gap-1.5">
@@ -502,13 +518,15 @@
                             </button>
                             <span class="absolute bottom-3 right-3 bg-accent-500/90 text-white text-[11px] font-mono px-2 py-0.5 rounded font-semibold">Cantilever Hooks</span>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
-                                <span class="font-semibold text-accent-500">Kinematic Features</span>
-                                <span>Sep 04, 2025</span>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between mb-3 text-xs text-industrial-500">
+                                    <span class="font-semibold text-accent-500">Kinematic Features</span>
+                                    <span>Sep 04, 2025</span>
+                                </div>
+                                <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug min-h-[3.5rem] sm:min-h-[4.5rem] md:min-h-[5.25rem] lg:min-h-[6.75rem]">Snap-Fit & Living Hinge Design: Deflection Limits & Strain Formulas</h3>
+                                <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 leading-relaxed min-h-[4.5rem] md:min-h-[5.5rem]">Formulas for calculating maximum permissible strain (&epsilon; &lt; 1.5%) for cantilever snap-fits, lead-in angle ratios, and gate orientation for polypropylene living hinges.</p>
                             </div>
-                            <h3 class="font-bold text-lg text-industrial-900 dark:text-white mb-3 group-hover:text-accent-500 transition-colors leading-snug">Snap-Fit & Living Hinge Design: Deflection Limits & Strain Formulas</h3>
-                            <p class="text-industrial-600 dark:text-industrial-400 text-xs sm:text-sm mb-4 flex-grow leading-relaxed">Formulas for calculating maximum permissible strain (&epsilon; &lt; 1.5%) for cantilever snap-fits, lead-in angle ratios, and gate orientation for polypropylene living hinges.</p>
                             <div class="pt-3 border-t border-gray-100 dark:border-industrial-700/60 flex items-center justify-between mt-auto">
                                 <span class="text-xs text-industrial-400 font-mono">Allowable Strain &lt; 1.5%</span>
                                 <a href="contact.html" class="text-accent-500 font-semibold text-xs sm:text-sm hover:text-accent-600 flex items-center gap-1.5">
@@ -532,49 +550,76 @@
                     <p class="text-industrial-600 dark:text-industrial-300 text-sm sm:text-base">Free, authoritative technical resources written by our senior mold design engineers for hardware teams and OEMs.</p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8">
                     <!-- Whitepaper 1 -->
-                    <div class="bg-white dark:bg-industrial-800 rounded-xl p-8 border border-gray-200 dark:border-industrial-700 shadow-sm flex flex-col justify-between hover:border-accent-500/50 transition-colors">
+                    <div class="bg-white dark:bg-industrial-800 rounded-2xl p-6 md:p-4 lg:p-6 xl:p-7 border border-gray-200 dark:border-industrial-700 shadow-sm flex flex-col justify-between hover:border-accent-500/50 hover:shadow-md transition-all duration-300">
                         <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-accent-500 font-bold text-xs uppercase tracking-wider bg-accent-500/10 px-2.5 py-1 rounded">PDF Handbook</span>
-                                <span class="text-xs text-industrial-500">42 Pages</span>
+                            <div class="flex items-center justify-between gap-2 mb-4 min-h-[1.75rem]">
+                                <span class="inline-flex items-center text-accent-500 font-bold text-[11px] lg:text-xs uppercase tracking-wider bg-accent-500/10 px-2 sm:px-2.5 py-1 rounded-md whitespace-nowrap">
+                                    PDF Handbook
+                                </span>
+                                <span class="text-[11px] lg:text-xs text-industrial-500 dark:text-industrial-400 whitespace-nowrap font-medium flex items-center gap-1 flex-shrink-0">
+                                    <i class="fas fa-file-alt text-industrial-400 dark:text-industrial-500 text-[10px]"></i> 42 Pages
+                                </span>
                             </div>
-                            <h3 class="text-xl font-bold text-industrial-900 dark:text-white mb-3">2026 DFM Master Handbook for Injection Molding</h3>
-                            <p class="text-xs sm:text-sm text-industrial-600 dark:text-industrial-400 mb-6 leading-relaxed">Comprehensive reference covering gate locations, side-action cam limits, boss design formulas, and draft tables across 30 polymers.</p>
+                            <h3 class="text-base sm:text-lg lg:text-xl font-bold text-industrial-900 dark:text-white mb-3 leading-snug min-h-[3.5rem] md:min-h-[6.5rem] lg:min-h-[5.5rem] xl:min-h-[4.25rem]">
+                                2026 DFM Master Handbook for Injection Molding
+                            </h3>
+                            <p class="text-xs sm:text-xs lg:text-sm text-industrial-600 dark:text-industrial-400 mb-5 lg:mb-6 leading-relaxed min-h-[4.5rem] md:min-h-[7.5rem] lg:min-h-[6.5rem] xl:min-h-[5.25rem]">
+                                Comprehensive reference covering gate locations, side-action cam limits, boss design formulas, and draft tables across 30 polymers.
+                            </p>
                         </div>
-                        <a href="contact.html" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-industrial-900 hover:bg-industrial-800 dark:bg-industrial-700 dark:hover:bg-industrial-600 text-white font-medium text-sm transition-colors">
-                            <i class="fas fa-file-pdf text-accent-400"></i> Download Guide (PDF)
+                        <a href="contact.html" class="inline-flex items-center justify-center gap-1.5 sm:gap-2 w-full py-2.5 sm:py-3 px-2.5 sm:px-4 rounded-xl bg-industrial-900 hover:bg-accent-500 dark:bg-industrial-700 dark:hover:bg-accent-500 text-white font-semibold text-xs lg:text-sm transition-all duration-200 mt-auto shadow-sm group">
+                            <i class="fas fa-file-pdf text-accent-400 group-hover:text-white transition-colors flex-shrink-0 text-xs"></i>
+                            <span class="whitespace-nowrap">Download Guide (PDF)</span>
                         </a>
                     </div>
 
                     <!-- Whitepaper 2 -->
-                    <div class="bg-white dark:bg-industrial-800 rounded-xl p-8 border border-gray-200 dark:border-industrial-700 shadow-sm flex flex-col justify-between hover:border-accent-500/50 transition-colors">
+                    <div class="bg-white dark:bg-industrial-800 rounded-2xl p-6 md:p-4 lg:p-6 xl:p-7 border border-gray-200 dark:border-industrial-700 shadow-sm flex flex-col justify-between hover:border-accent-500/50 hover:shadow-md transition-all duration-300">
                         <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-accent-500 font-bold text-xs uppercase tracking-wider bg-accent-500/10 px-2.5 py-1 rounded">Material Matrix</span>
-                                <span class="text-xs text-industrial-500">18 Pages</span>
+                            <div class="flex items-center justify-between gap-2 mb-4 min-h-[1.75rem]">
+                                <span class="inline-flex items-center text-accent-500 font-bold text-[11px] lg:text-xs uppercase tracking-wider bg-accent-500/10 px-2 sm:px-2.5 py-1 rounded-md whitespace-nowrap">
+                                    Material Matrix
+                                </span>
+                                <span class="text-[11px] lg:text-xs text-industrial-500 dark:text-industrial-400 whitespace-nowrap font-medium flex items-center gap-1 flex-shrink-0">
+                                    <i class="fas fa-file-alt text-industrial-400 dark:text-industrial-500 text-[10px]"></i> 18 Pages
+                                </span>
                             </div>
-                            <h3 class="text-xl font-bold text-industrial-900 dark:text-white mb-3">Resin Shrinkage, Warpage & Chemical Resistance</h3>
-                            <p class="text-xs sm:text-sm text-industrial-600 dark:text-industrial-400 mb-6 leading-relaxed">In-depth volumetric shrinkage test charts, anisotropic orientation factors, and solvent compatibility ratings for amorphous vs. crystalline resins.</p>
+                            <h3 class="text-base sm:text-lg lg:text-xl font-bold text-industrial-900 dark:text-white mb-3 leading-snug min-h-[3.5rem] md:min-h-[6.5rem] lg:min-h-[5.5rem] xl:min-h-[4.25rem]">
+                                Resin Shrinkage, Warpage & Chemical Resistance
+                            </h3>
+                            <p class="text-xs sm:text-xs lg:text-sm text-industrial-600 dark:text-industrial-400 mb-5 lg:mb-6 leading-relaxed min-h-[4.5rem] md:min-h-[7.5rem] lg:min-h-[6.5rem] xl:min-h-[5.25rem]">
+                                In-depth volumetric shrinkage test charts, anisotropic orientation factors, and solvent compatibility ratings for amorphous vs. crystalline resins.
+                            </p>
                         </div>
-                        <a href="contact.html" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-industrial-900 hover:bg-industrial-800 dark:bg-industrial-700 dark:hover:bg-industrial-600 text-white font-medium text-sm transition-colors">
-                            <i class="fas fa-file-pdf text-accent-400"></i> Download Matrix (PDF)
+                        <a href="contact.html" class="inline-flex items-center justify-center gap-1.5 sm:gap-2 w-full py-2.5 sm:py-3 px-2.5 sm:px-4 rounded-xl bg-industrial-900 hover:bg-accent-500 dark:bg-industrial-700 dark:hover:bg-accent-500 text-white font-semibold text-xs lg:text-sm transition-all duration-200 mt-auto shadow-sm group">
+                            <i class="fas fa-file-pdf text-accent-400 group-hover:text-white transition-colors flex-shrink-0 text-xs"></i>
+                            <span class="whitespace-nowrap">Download Matrix (PDF)</span>
                         </a>
                     </div>
 
                     <!-- Whitepaper 3 -->
-                    <div class="bg-white dark:bg-industrial-800 rounded-xl p-8 border border-gray-200 dark:border-industrial-700 shadow-sm flex flex-col justify-between hover:border-accent-500/50 transition-colors">
+                    <div class="bg-white dark:bg-industrial-800 rounded-2xl p-6 md:p-4 lg:p-6 xl:p-7 border border-gray-200 dark:border-industrial-700 shadow-sm flex flex-col justify-between hover:border-accent-500/50 hover:shadow-md transition-all duration-300">
                         <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-accent-500 font-bold text-xs uppercase tracking-wider bg-accent-500/10 px-2.5 py-1 rounded">Tooling Standard</span>
-                                <span class="text-xs text-industrial-500">26 Pages</span>
+                            <div class="flex items-center justify-between gap-2 mb-4 min-h-[1.75rem]">
+                                <span class="inline-flex items-center text-accent-500 font-bold text-[11px] lg:text-xs uppercase tracking-wider bg-accent-500/10 px-2 sm:px-2.5 py-1 rounded-md whitespace-nowrap">
+                                    Tooling Standard
+                                </span>
+                                <span class="text-[11px] lg:text-xs text-industrial-500 dark:text-industrial-400 whitespace-nowrap font-medium flex items-center gap-1 flex-shrink-0">
+                                    <i class="fas fa-file-alt text-industrial-400 dark:text-industrial-500 text-[10px]"></i> 26 Pages
+                                </span>
                             </div>
-                            <h3 class="text-xl font-bold text-industrial-900 dark:text-white mb-3">Tool Steel Selection: H13 vs. S7 vs. 420 Stainless</h3>
-                            <p class="text-xs sm:text-sm text-industrial-600 dark:text-industrial-400 mb-6 leading-relaxed">Engineering breakdown of cavity polishability, thermal conductivity, corrosion resistance against flame-retardant off-gassing, and cycle endurance.</p>
+                            <h3 class="text-base sm:text-lg lg:text-xl font-bold text-industrial-900 dark:text-white mb-3 leading-snug min-h-[3.5rem] md:min-h-[6.5rem] lg:min-h-[5.5rem] xl:min-h-[4.25rem]">
+                                Tool Steel Selection: H13 vs. S7 vs. 420 Stainless
+                            </h3>
+                            <p class="text-xs sm:text-xs lg:text-sm text-industrial-600 dark:text-industrial-400 mb-5 lg:mb-6 leading-relaxed min-h-[4.5rem] md:min-h-[7.5rem] lg:min-h-[6.5rem] xl:min-h-[5.25rem]">
+                                Engineering breakdown of cavity polishability, thermal conductivity, corrosion resistance against flame-retardant off-gassing, and cycle endurance.
+                            </p>
                         </div>
-                        <a href="contact.html" class="inline-flex items-center justify-center gap-2 w-full py-3 rounded-lg bg-industrial-900 hover:bg-industrial-800 dark:bg-industrial-700 dark:hover:bg-industrial-600 text-white font-medium text-sm transition-colors">
-                            <i class="fas fa-file-pdf text-accent-400"></i> Download Guide (PDF)
+                        <a href="contact.html" class="inline-flex items-center justify-center gap-1.5 sm:gap-2 w-full py-2.5 sm:py-3 px-2.5 sm:px-4 rounded-xl bg-industrial-900 hover:bg-accent-500 dark:bg-industrial-700 dark:hover:bg-accent-500 text-white font-semibold text-xs lg:text-sm transition-all duration-200 mt-auto shadow-sm group">
+                            <i class="fas fa-file-pdf text-accent-400 group-hover:text-white transition-colors flex-shrink-0 text-xs"></i>
+                            <span class="whitespace-nowrap">Download Guide (PDF)</span>
                         </a>
                     </div>
                 </div>
@@ -676,26 +721,26 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                 <div class="flex flex-col justify-between h-full">
-                    <div class="flex items-center gap-2 mb-6">
+                    <a href="index.html" class="flex items-center gap-2 mb-6 group cursor-pointer">
                         <div
-                            class="w-8 h-8 bg-accent-500 rounded flex items-center justify-center text-white font-bold text-xl">
+                            class="w-8 h-8 bg-accent-500 rounded flex items-center justify-center text-white font-bold text-xl group-hover:scale-105 transition-transform">
                             <i class="fas fa-cube"></i>
                         </div>
                         <span class="font-bold text-xl tracking-tight text-industrial-900 dark:text-white">Nexus<span
                                 class="text-accent-500">Plastics</span></span>
-                    </div>
+                    </a>
                     <p class="mb-6 text-sm">Premium precision injection molding and custom plastic parts manufacturing
                         for critical industrial applications worldwide.</p>
                     <div class="flex space-x-4 rtl:space-x-reverse">
-                        <a href="#"
-                            class="text-industrial-500 hover:text-industrial-900 dark:text-industrial-400 dark:hover:text-white transition-colors"><i
-                                class="fab fa-linkedin text-xl"></i></a>
-                        <a href="#"
-                            class="text-industrial-500 hover:text-industrial-900 dark:text-industrial-400 dark:hover:text-white transition-colors"><i
-                                class="fab fa-x-twitter text-xl"></i></a>
-                        <a href="#"
-                            class="text-industrial-500 hover:text-industrial-900 dark:text-industrial-400 dark:hover:text-white transition-colors"><i
-                                class="fab fa-youtube text-xl"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
+                            class="w-9 h-9 rounded-full bg-industrial-200 dark:bg-industrial-800 flex items-center justify-center text-industrial-600 dark:text-industrial-400 hover:bg-accent-500 hover:text-white dark:hover:bg-accent-500 dark:hover:text-white transform hover:scale-110 transition-all duration-200"><i
+                                class="fab fa-linkedin text-lg"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"
+                            class="w-9 h-9 rounded-full bg-industrial-200 dark:bg-industrial-800 flex items-center justify-center text-industrial-600 dark:text-industrial-400 hover:bg-accent-500 hover:text-white dark:hover:bg-accent-500 dark:hover:text-white transform hover:scale-110 transition-all duration-200"><i
+                                class="fab fa-x-twitter text-lg"></i></a>
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube"
+                            class="w-9 h-9 rounded-full bg-industrial-200 dark:bg-industrial-800 flex items-center justify-center text-industrial-600 dark:text-industrial-400 hover:bg-accent-500 hover:text-white dark:hover:bg-accent-500 dark:hover:text-white transform hover:scale-110 transition-all duration-200"><i
+                                class="fab fa-youtube text-lg"></i></a>
                     </div>
                 </div>
 
